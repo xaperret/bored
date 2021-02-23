@@ -4,11 +4,11 @@
 
 ## Informations pour les étudiants
 
-**Le fork de ce repository doit contenir votre projet pour les cours qui sera évalué sur la partie frontend pour le cours Applications Web et la partie backend pour le cours Architectures Web. Pour la marche à suivre veuillez vour référer au document nommé STUDENTS.md**
+**Le fork de ce repository doit contenir votre projet pour les cours qui sera évalué sur la partie frontend pour le cours Applications Web et la partie backend pour le cours Architectures Web. Pour la marche à suivre, veuillez vour référer au document nommé STUDENTS.md**
 
-les critère d'évaluations sont explicités ici: https://gitedu.hesge.ch/jeremy.gobet/app-et-archi-web
+Les critères d'évaluation sont explicités ici: https://gitedu.hesge.ch/jeremy.gobet/app-et-archi-web
 
-La suite contient la documentation du projet exemple que vous devez adapter et compléter pour le votre.
+La suite contient la documentation du projet exemple que vous devez adapter et compléter pour le vôtre.
 
 ---
 
@@ -26,14 +26,14 @@ Cloner le projet localement avec la commande git suivante:
 
 ### Structure
 
-Le projet contiens deux dossiers:
+Le projet contient deux dossiers:
 
 - **frontend**: Contient le site public
 - **backend**: Contient le serveur Node
 
 ### Démarrer le serveur
 
-La partie public est servie par le serveur sur Node. Vous devez avoir Node installé sur votre machine pour démarrer cette application Web.
+La partie publique est servie par le serveur sur Node. Vous devez avoir Node installé sur votre machine pour démarrer cette application Web.
 
 Accédez au dossier contenant le serveur Node
 
@@ -47,7 +47,7 @@ Démarrez le serveur Node
 
 `node server.js`
 
-Vous pouvez ensuite visualisez le site en local sur un navigateur: **localhost:8080**
+Vous pouvez ensuite visualiser le site en local sur un navigateur: **localhost:8080**
 
 ### Stopper le server
 
@@ -61,11 +61,11 @@ Pour stopper le serveur Node, utilisez la commande **CTRL + C**
 
 Voici la liste des fonctionnalités de l'Application Web:
 
-- Réccupération des blagues sur l'API [api.icndb.com] (non-implémenté)
-- Réccupération des dernières blagues publiées (non-implémenté)
-- Like/Unlike des blagues (non-implémenté)
-- Réccupération des blagues les plus appréciées par la communautée (non-implémenté)
-- Réccupération des blagues appréciées par un utilisateur (non-implémenté)
+- Récupération des blagues sur l'API [api.icndb.com] (non-implémenté)
+- Récupération des dernières blagues publiées (non-implémenté)
+- Like/Dislike des blagues (non-implémenté)
+- Récupération des blagues les plus appréciées par la communauté (non-implémenté)
+- Récupération des blagues appréciées par un utilisateur (non-implémenté)
 
 L'application ne dispose pas d'une persistance de données. Une fois le serveur stoppé, toutes les données sont perdues.
 
