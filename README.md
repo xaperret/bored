@@ -76,7 +76,7 @@ Une authentification sans mot de passe permet l'identification de l'utilisateur 
 #### Assistant
 
 - Identifiant: @michael.minelli
-- Mail: michael.minelli@hesge.ch
+- Mail: michael-jean.minelli@hesge.ch
 
 #### Applications Web
 
