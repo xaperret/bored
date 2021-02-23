@@ -43,11 +43,15 @@ Installez les dépendances
 
 `npm install`
 
-Lancer le serveur Node
+Démarrez le serveur Node
 
 `node server.js`
 
 Vous pouvez ensuite visualisez le site en local sur un navigateur: **localhost:8080**
+
+### Stopper le server
+
+Pour stopper le serveur Node, utilisez la commande **CTRL + C**
 
 ### Architecture du projet
 
