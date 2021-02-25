@@ -63,13 +63,28 @@ Voici la liste des fonctionnalités de l'Application Web:
 
 - Récupération des blagues sur l'API [api.icndb.com] (non-implémenté)
 - Récupération des dernières blagues publiées (non-implémenté)
-- Like/Dislike des blagues (non-implémenté)
-- Récupération des blagues les plus appréciées par la communauté (non-implémenté)
-- Récupération des blagues appréciées par un utilisateur (non-implémenté)
+- Gestion de la notation de blagues (non-implémenté)
+- Récupération des blagues les mieux notées par les utilisateurs (non-implémenté)
+- Récupération des blagues notées par un utilisateur (non-implémenté)
 
 L'application ne dispose pas d'une persistance de données. Une fois le serveur stoppé, toutes les données sont perdues.
 
 Une authentification sans mot de passe permet l'identification de l'utilisateur via l'utilisation de son adresse e-mail.
+
+### Interface REST API
+
+Voici l'API REST CRUD exposée par le backend
+
+| Verbe HTTP | Endpoint path            | Données     | Description |
+|:-----------|:-------------------------|:------------|:------------|
+| GET        | emails/                  |             | Retourne la liste des mails des utilisateurs |
+| GET        | evaluated-jokes/         |             | Retourne les blagues les mieux notées |
+| GET        | evaluated-jokes/*:email* | email*      | Retourne les blagues notées par l'utilisateur |
+| POST       | evaluated-jokes/         | email*, id* | Ajout d'une nouvelle note à la blague (id) |
+| PUT        | evaluated-jokes/         | email*, id* | Modification de la note de la blague (id) |
+| DELETE     | evaluated-jokes/         | email*, id* | Suppression de la note de la blague (id) |
+
+\* Obligatoire
 
 ### Contact
 
