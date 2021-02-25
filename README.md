@@ -91,7 +91,7 @@ Voici l'API REST CRUD exposée par le backend
 #### Assistant
 
 - Identifiant: @michael.minelli
-- Mail: michael.minelli@hesge.ch
+- Mail: michael-jean.minelli@hesge.ch
 
 #### Applications Web
 
