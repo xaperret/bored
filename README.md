@@ -55,13 +55,36 @@ Pour stopper le serveur Node, utilisez la commande **CTRL + C**
 
 ### Architecture du projet
 
-(à définir)
+           +------------+
+           |            |
+           |            |
+        +--+  Frontend  +--+
+        |  |            |  |
+        |  |            |  |
+        |  +------------+  |
+        |                  |
+        |                  |
+        |                  |
+        |                  |
+        v                  v
+ +-------------+    +-------------+
+ |     API     |    |     API     |
+ +-------------+    +-------------+
+ |             |    |             |
+ |   Backend   |    |    ICNDB    |
+ |   NODE.JS   |    |  API public |
+ |             |    |             |
+ +-------------+    +-------------+
+
+- Frontend: Projet HTML5, CSS3, JS
+- Backend: Exposition d'une API REST sur NODE.JS pour la gestion des notations
+- ICNDB: API Rest public pour réccupérer les blagues de Chuck Norris ([api.icndb.com])
 
 ### Fonctionnalités
 
 Voici la liste des fonctionnalités de l'Application Web:
 
-- Récupération des blagues sur l'API [api.icndb.com] (non-implémenté)
+- Récupération des blagues sur l'API public (non-implémenté)
 - Récupération des dernières blagues publiées (non-implémenté)
 - Gestion de la notation de blagues (non-implémenté)
 - Récupération des blagues les mieux notées par les utilisateurs (non-implémenté)
@@ -75,7 +98,7 @@ Une authentification sans mot de passe permet l'identification de l'utilisateur 
 
 Voici l'API REST CRUD exposée par le backend
 
-| Verbe HTTP | Endpoint path            | Données     | Description |
+| Verbe HTTP | Endpoint                 | Données     | Description |
 |:-----------|:-------------------------|:------------|:------------|
 | GET        | emails/                  |             | Retourne la liste des mails des utilisateurs |
 | GET        | evaluated-jokes/         |             | Retourne les blagues les mieux notées |
