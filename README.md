@@ -55,26 +55,26 @@ Pour stopper le serveur Node, utilisez la commande **CTRL + C**
 
 ### Architecture du projet
 
-            +------------+
-            |            |
-            |            |
-         +--+  Frontend  +--+
-         |  |            |  |
-         |  |            |  |
-         |  +------------+  |
-         |                  |
-         |                  |
-         |                  |
-         |                  |
-         v                  v
-  +-------------+    +-------------+
-  |     API     |    |     API     |
-  +-------------+    +-------------+
-  |             |    |             |
-  |   Backend   |    |    ICNDB    |
-  |   NODE.JS   |    |  API public |
-  |             |    |             |
-  +-------------+    +-------------+
+              +------------+
+              |            |
+              |            |
+           +--+  Frontend  +--+
+           |  |            |  |
+           |  |            |  |
+           |  +------------+  |
+           |                  |
+           |                  |
+           |                  |
+           |                  |
+           v                  v
+    +-------------+    +-------------+
+    |     API     |    |     API     |
+    +-------------+    +-------------+
+    |             |    |             |
+    |   Backend   |    |    ICNDB    |
+    |   NODE.JS   |    |  API public |
+    |             |    |             |
+    +-------------+    +-------------+
 
 - Frontend: Projet HTML5, CSS3, JS
 - Backend: Exposition d'une API REST sur NODE.JS pour la gestion des notations
