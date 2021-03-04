@@ -12,6 +12,9 @@
 ## Récupérer le projet
 https://gitedu.hesge.ch/xavier.perret/app-et-archi-web-tp-2020
 
+## Organisation
+https://miro.com/app/board/o9J_lRRMehw=/
+
 ## Installer le projet
 *placeholder*
 
