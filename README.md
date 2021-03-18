@@ -1,34 +1,34 @@
-# Travail Pratique
-
-**Ceci est le projet exemple** pour la réalisation du travail pratique (TP) et le dépôt Git de référence pour les étudiants. Il sera complété au fur et à mesure des notions enseignées pendant le cours.
-
-## Informations pour les étudiants
-
-**Le fork de ce repository doit contenir votre projet pour les cours qui sera évalué sur la partie frontend pour le cours Applications Web et la partie backend pour le cours Architectures Web. Pour la marche à suivre, veuillez vour référer au document nommé STUDENTS.md**
-
-Les critères d'évaluation sont explicités ici: https://gitedu.hesge.ch/jeremy.gobet/app-et-archi-web
-
-La suite contient la documentation du projet exemple que vous devez adapter et compléter pour le vôtre.
-
----
-
+# Travail Pratique - Fabien Lometti et Xavier Perret
 ## Description du projet
+### Le concept en une phrase
+Un site qui permet de rechercher des activités lorsque l'on a du temps et subséquemment de les noter et commenter.
 
-Ce projet est une application Web permettant à l'utilisateur de consulter les blagues de Chuck Norris, de voter pour ses blagues préférées et de consulter les blagues les plus appréciées par la communauté.
+### Le service offert
+Le site est un recueil d'activités à faire lorsque l'on a du temps libre et dispose d'un certain nombre de fonctionnalités :
+- Rechercher une activité à effectuer (à l'aide de l'API [bored](https://www.boredapi.com/))
+  - Filter par prix, nombre de personne, difficulté 
+- Noter l'activité choisie
+- Commenter une activité
+- Enregistrer le choix d'une activité choisie par l'utilisateur
+- S'inscrire
+- Se connecter
+ 
+### Récupérer le projet
 
-### Réccupérer le projet
+Le projet est disponible sur [gitlab](https://gitedu.hesge.ch/xavier.perret/app-et-archi-web-tp-2020/)
 
-Le projet est disponible sur l'hébergement Git (gitedu.hesge.ch).
+Pour cloner le projet localement avec la commande git suivante:
 
-Cloner le projet localement avec la commande git suivante:
-
-`git clone ssh://git@ssh.hesge.ch:10572/jeremy.gobet/app-et-archi-web-tp-2020.git`
+`git clone ssh://git@ssh.hesge.ch:10572/xavier.perret/app-et-archi-web-tp-2020.git`
 
 ### Structure
 
 Le projet contient deux dossiers:
 
 - **frontend**: Contient le site public
+  - res
+    - css
+    - script
 - **backend**: Contient le serveur Node
 
 ### Démarrer le serveur
@@ -71,57 +71,36 @@ Pour stopper le serveur Node, utilisez la commande **CTRL + C**
     |     API     |    |     API     |
     +-------------+    +-------------+
     |             |    |             |
-    |   Backend   |    |    ICNDB    |
+    |   Backend   |    |    bored    |
     |   NODE.JS   |    |  API public |
     |             |    |             |
     +-------------+    +-------------+
 
 - Frontend: Projet HTML5, CSS3, JS
 - Backend: Exposition d'une API REST sur NODE.JS pour la gestion des notations
-- ICNDB: API Rest public pour réccupérer les blagues de Chuck Norris (https://api.icndb.com)
 
 ### Fonctionnalités
 
 Voici la liste des fonctionnalités de l'Application Web:
 
-- Récupération des blagues sur l'API public (non-implémenté)
-- Récupération des dernières blagues publiées (non-implémenté)
-- Gestion de la notation de blagues (non-implémenté)
-- Récupération des blagues les mieux notées par les utilisateurs (non-implémenté)
-- Récupération des blagues notées par un utilisateur (non-implémenté)
-
-L'application ne dispose pas d'une persistance de données. Une fois le serveur stoppé, toutes les données sont perdues.
-
-Une authentification sans mot de passe permet l'identification de l'utilisateur via l'utilisation de son adresse e-mail.
+- Rechercher une activité à effectuer (à l'aide de l'API [bored](https://www.boredapi.com/))
+  - Filter par prix, nombre de personne, difficulté 
+- Noter l'activité choisie
+- Commenter une activité
+- Enregistrer le choix d'une activité choisie par l'utilisateur
+- S'inscrire
+- Se connecter
 
 ### Interface REST API
 
-Voici l'API REST CRUD exposée par le backend
 
-| Verbe HTTP | Endpoint                 | Données     | Description |
-|:-----------|:-------------------------|:------------|:------------|
-| GET        | emails/                  |             | Retourne la liste des mails des utilisateurs |
-| GET        | evaluated-jokes/         |             | Retourne les blagues les mieux notées |
-| GET        | evaluated-jokes/*:email* | email*      | Retourne les blagues notées par l'utilisateur |
-| POST       | evaluated-jokes/         | email*, id* | Ajout d'une nouvelle note à la blague (id) |
-| PUT        | evaluated-jokes/         | email*, id* | Modification de la note de la blague (id) |
-| DELETE     | evaluated-jokes/         | email*, id* | Suppression de la note de la blague (id) |
+## Contact
 
-\* Obligatoire
+### Groupe
+- Fabien Lometti
+- Identifiant: @fabien.lometti
+- Mail: fabien.lometti@etu.hesge.ch
 
-### Contact
-
-#### Assistant
-
-- Identifiant: @michael.minelli
-- Mail: michael-jean.minelli@hesge.ch
-
-#### Applications Web
-
-- Identifiant: @jeremy.gobet
-- Mail: jeremy.gobet@hesge.ch
-
-#### Architectures Web
-
-- Identifiant: @stephane.malandai
-- Mail: stephane.malandain@hesge.ch
+- Xavier Perret
+- Identifiant: @xavier.perret
+- Mail: xavier.perret@etu.hesge.ch
