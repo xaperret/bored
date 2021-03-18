@@ -1,0 +1,29 @@
+/* COMMON */
+
+p {
+  margin: 8px 0;
+}
+
+.container {
+  overflow: auto;
+  margin: 0 auto;
+  width: 768px;
+}
+
+/* HEADER */
+
+
+
+
+nav {
+  border-radius: 5px;
+  color: rosybrown;
+}
+.content {
+
+  color:aquamarine;
+}
+p {
+  color: lightblue;
+}
+
