@@ -1,3 +1,12 @@
+:root {
+  --container-width: 768px;
+  --container-margin: 16px;
+  --navigation-width: 192px;
+
+  --header-height: 100px;
+  --footer-height: 90px;
+}
+
 html, body {
   margin: 0;
   min-height: 100%;
@@ -21,7 +30,12 @@ p {
 .container {
   overflow: auto;
   margin: 0 auto;
-  width: 768px;
+  max-width: var(--container-width);
+}
+
+.content {
+  border-radius: 8px;
+  background-color: white;
 }
 
 /* HEADER */
@@ -30,7 +44,7 @@ header {
   position: fixed;
   top: 0;
 
-  height: 100px;
+  height: var(--header-height);
 }
 
 header > .container {
@@ -44,30 +58,73 @@ header > .container > img {
 header > .container > span {
   position: absolute;
 
+  margin: 0;
   margin-left: 30px;
-  height: 100px;
-  line-height: 100px;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  overflow: hidden;
+}
 
-  font-size: 2.5em;
+header > .container h1 {
+  margin: 0;
+  font-size: 2em;
 }
 
 /* NAVIGATION */
 
-nav {
-  padding-top: 130px;
-  padding-bottom: 30px;
+.console {
+  padding-top: calc(var(--header-height) + var(--container-margin));
+  padding-bottom: var(--container-margin);
+}
+
+.console h3 {
+  margin: 0;
+  padding: 16px;
 }
 
 /* MAIN */
 
 main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   margin: 0 auto;
 }
 
-.content {
+nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--container-margin);
+  padding: 16px;
+  width: calc(var(--navigation-width) - 32px);
+}
+
+.main-content {
   padding: 20px;
-  border-radius: 8px;
-  background-color: white;
+  width: calc(var(--container-width) - var(--container-margin) - var(--navigation-width) - 40px);
+}
+
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 16px;
+    width: auto;
+  }
+  
+  nav > button {
+    flex-grow: 1;
+  }
+
+  .main-content {
+    width: auto;
+  }
 }
 
 /* FOOTER */
@@ -77,13 +134,13 @@ body {
 }
 
 main {
-  padding-bottom: 120px;
+  padding-bottom: calc(var(--footer-height) + var(--container-margin));
 }
 
 footer {
   position: absolute;
   bottom: 0;
-  height: 90px;
-  margin-top: 30px;
+  height: var(--footer-height);
+  margin-top: var(--container-margin);
   text-align: center;
 }
