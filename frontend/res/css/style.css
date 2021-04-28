@@ -1,6 +1,7 @@
 :root {
   --container-width: 768px;
   --container-margin: 16px;
+  --content-padding: 16px;
   --navigation-width: 192px;
 
   --header-height: 100px;
@@ -79,7 +80,23 @@ header > .container h1 {
 
 .console h3 {
   margin: 0;
-  padding: 16px;
+  padding: var(--content-padding);
+}
+
+.console-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: var(--content-padding);
+}
+
+.console-content > input, .console-content > span {
+  min-width: 200px;
+  margin: 0 var(--content-padding);
+}
+
+#console-error {
+  color: red;
 }
 
 /* MAIN */
@@ -96,13 +113,21 @@ nav {
   display: flex;
   flex-direction: column;
   margin-bottom: var(--container-margin);
-  padding: 16px;
+  padding: var(--content-padding);
   width: calc(var(--navigation-width) - 32px);
 }
 
 .main-content {
   padding: 20px;
   width: calc(var(--container-width) - var(--container-margin) - var(--navigation-width) - 40px);
+}
+
+div.joke {
+  padding: 8px var(--content-padding);
+  margin: 8px 0;
+
+  border-radius: 4px;
+  background-color: #eee;
 }
 
 @media (max-width: 800px) {
@@ -114,7 +139,7 @@ nav {
   nav {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 16px;
+    padding: var(--content-padding);
     width: auto;
   }
   
