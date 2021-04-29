@@ -1,26 +1,57 @@
+/* IMPORTS */
+@font-face {
+  font-family: Interstellar;
+  src: url("../font/001\ Interstellar\ Log\ Regular.ttf");
+}
+
 /* COMMON */
 * {
-  border: 3px black solid;
+  margin: 0;
 }
 
-body{
-  margin:0;
-  padding:0;
+html {
+  background-color: #fafffd;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* BODY */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 p {
   margin: 8px 0;
-  color: lightblue;
+  color: #3c91e6;
 }
 
+/* FOOTER */
 footer {
-  left:0;
+  left: 0;
   bottom: 0;
-  min-width: 100vw;
-  position: fixed;
+}
+footer {
+  color: #342e37;
+  background-color: #fa824c;
+  margin: auto 0;
+}
+
+footer .item {
+  margin: 5px auto 5px;
+}
+
+.content {
+  color: aquamarine;
 }
 
 /* HEADER */
-header img { /* icon in header */
+header img {
+  /* icon in header */
   max-width: 100px;
   max-height: 100px;
 }
@@ -33,45 +64,67 @@ nav {
 
 /* MAIN */
 main {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  margin: 1em 4em 1em;
+  border: 3px #342e37 solid;
+  color: #342e37;
+  height: 80%;
+  flex-grow: 1;
 }
-
 
 /* LINKS */
 a {
   text-decoration: none;
 }
 
+header a {
+  text-decoration: none;
+  color: #342e37;
+}
+
 /* CLASSES */
+/*
 .container {
   display: flex;
-  
-  justify-content: space-between;
-  align-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
-  margin: auto 30px;
+}
+*/
+.item {
 }
 
-.container_footer {
-  background-color:lightsalmon;
-  display: flex;
-  flex-direction: column;
-  
-}
-.item_footer{
-  margin: 5px auto;
+.activity {
+  font-family: "Roboto Mono", monospace;
 }
 
-.content {
- 
-  color:aquamarine;
+.activity h1 {
+  font-weight: bold;
+}
+
+/* ID */
+#header {
+  font-family: "Interstellar";
+}
+
+/* MAIN */
+main {
+  padding: 1em;
+}
+
+main .item {
+  flex-basis: 10em;
+  border: 3px black solid;
+}
+
+a {
+  text-decoration: underline;
+  color: #3c91e6;
 }
 
 /* Extra large screens, TV */
 @media screen and (min-width: 1201px) {
-
 }
 
 /*
@@ -81,10 +134,20 @@ a {
 
 /* TABLETS */
 @media screen and (max-width: 768px) {
-  
 }
 
 /* MOBILE PHONE */
 @media screen and (max-width: 480px) {
-
 }
+
+/*
+lightsalmon
+aquamarine
+
+font-family: 'Roboto Mono', monospace;
+Mandarin -> FA824C
+Baby powder -> FAFFFD
+Yellow green -> A2D729
+Black coffee -> 342E37
+Tufts -> 3C91E6
+*/
