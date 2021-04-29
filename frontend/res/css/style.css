@@ -1,8 +1,10 @@
 /* IMPORTS */
-@font-face {
+/*
+ *@font-face {
   font-family: Interstellar;
   src: url("../font/001\ Interstellar\ Log\ Regular.ttf");
 }
+*/
 
 /* COMMON */
 * {
@@ -10,7 +12,7 @@
 }
 
 html {
-  background-color: #fafffd;
+  background-color: #252422;
 }
 
 .wrapper {
@@ -21,23 +23,14 @@ html {
 
 /* BODY */
 body {
-  margin: 0;
   padding: 0;
-}
-
-p {
-  margin: 8px 0;
-  color: #3c91e6;
 }
 
 /* FOOTER */
 footer {
-  left: 0;
-  bottom: 0;
-}
-footer {
-  color: #342e37;
-  background-color: #fa824c;
+  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  color: #fffcf2;
+  background-color: #eb5e28;
   margin: auto 0;
 }
 
@@ -56,33 +49,65 @@ header img {
   max-height: 100px;
 }
 
+header a {
+  font-family: "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
+  font-size: 1.5em;
+  color: #fffcf2;
+  text-decoration: none;
+}
+
 /* NAV */
 nav {
-  border-radius: 5px;
-  color: rosybrown;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 8px;
+  color: #403d39;
+  background: #fffcf2;
+  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+}
+
+nav form {
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 /* MAIN */
 main {
-  margin: 1em 4em 1em;
-  border: 3px #342e37 solid;
+  margin: 1em;
+  border-radius: 8px;
   color: #342e37;
   height: 80%;
   flex-grow: 1;
+  padding: 1em;
+}
+
+main .item {
+  flex-basis: 10em;
+  border: 3px #ccc5b9 solid;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 0.5em;
+  background: #fffcf2;
+}
+
+main .item h1 {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: underline;
+  color: #3c91e6;
 }
 
 /* LINKS */
 a {
-  text-decoration: none;
-}
-
-header a {
-  text-decoration: none;
-  color: #342e37;
+  text-decoration: underline;
+  color: #eb5e28;
+  font-family: "Roboto Mono", monospace;
 }
 
 /* CLASSES */
-/*
 .container {
   display: flex;
   flex-direction: row;
@@ -91,36 +116,43 @@ header a {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-*/
-.item {
-}
 
 .activity {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
 }
 
 .activity h1 {
   font-weight: bold;
 }
 
+.slider {
+  /* snippet from https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #eb5e28; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #403d39;
+  background: #fffcf2;
+  cursor: pointer;
+}
+
 /* ID */
 #header {
   font-family: "Interstellar";
-}
-
-/* MAIN */
-main {
-  padding: 1em;
-}
-
-main .item {
-  flex-basis: 10em;
-  border: 3px black solid;
-}
-
-a {
-  text-decoration: underline;
-  color: #3c91e6;
+  font-size: 2em;
 }
 
 /* Extra large screens, TV */
@@ -145,9 +177,10 @@ lightsalmon
 aquamarine
 
 font-family: 'Roboto Mono', monospace;
-Mandarin -> FA824C
-Baby powder -> FAFFFD
-Yellow green -> A2D729
-Black coffee -> 342E37
-Tufts -> 3C91E6
-*/
+
+ * Floral White -> #FFFCF2
+ * Pale Silver -> #CCC5B9
+ * Black Olive -> #403D39
+ * Eerie Black -> #252422
+ * Flame -> #EB5E28
+ */

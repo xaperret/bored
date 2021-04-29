@@ -1,17 +1,23 @@
-var element = document.getElementById("activity");
-let pActivity = document.createElement("p");
+var element = document.createElement("div");
+element.className = "item activity";
+let pActivity = document.createElement("h1");
 let pType = document.createElement("p");
 let pParticipants = document.createElement("p");
 let pPrice = document.createElement("p");
 let pAccessibility = document.createElement("p");
+var mainSection = document.querySelector("main");
 fetch("http://www.boredapi.com/api/activity/")
   .then((res) => res.json())
   .then((data) => dataShow(data));
 
 function dataShow(data) {
-  element.append(pActivity, "Cool activity : " + data.activity);
-  element.append(pAccessibility, "Hello accessibility : " + data.accessibility);
-  element.append(pType, "What a type : " + data.type);
-  element.append(pPrice, "yuk the price : " + data.price);
-  element.append(pParticipants, "ola quetal participants" + data.participants);
+  pActivity.append(data.activity);
+  pType.append(data.type);
+  pParticipants.append(data.participants);
+  pAccessibility.append(data.accessibility);
+  element.append(pActivity);
+  element.append(pType);
+  element.append(pParticipants);
+  element.append(pAccessibility);
+  mainSection.append(element);
 }
