@@ -15,10 +15,22 @@ html {
   background-color: #252422;
 }
 
+/* FLEXBOX */
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.container {
+  /* most containers */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* BODY */
@@ -31,18 +43,31 @@ footer {
   font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
   color: #fffcf2;
   background-color: #eb5e28;
-  margin: auto 0;
-}
-
-footer .item {
-  margin: 5px auto 5px;
-}
-
-.content {
-  color: aquamarine;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 /* HEADER */
+header {
+  padding: 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+header .item {
+  align-self: center;
+  margin: 1em;
+}
+
+header .emptySpace {
+  flex-grow: 4;
+}
+
 header img {
   /* icon in header */
   max-width: 100px;
@@ -50,8 +75,13 @@ header img {
 }
 
 header a {
+  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+}
+
+#home {
+  /* title */
   font-family: "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
-  font-size: 1.5em;
+  font-size: 2em;
   color: #fffcf2;
   text-decoration: none;
 }
@@ -79,9 +109,15 @@ main {
   height: 80%;
   flex-grow: 1;
   padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-main .item {
+main .activity {
   flex-basis: 10em;
   border: 3px #ccc5b9 solid;
   border-radius: 8px;
@@ -90,7 +126,7 @@ main .item {
   background: #fffcf2;
 }
 
-main .item h1 {
+main .activity h1 {
   font-weight: bold;
   font-size: 1em;
 }
@@ -108,15 +144,6 @@ a {
 }
 
 /* CLASSES */
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
 .activity {
   font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
 }
@@ -149,12 +176,6 @@ a {
   cursor: pointer;
 }
 
-/* ID */
-#header {
-  font-family: "Interstellar";
-  font-size: 2em;
-}
-
 /* Extra large screens, TV */
 @media screen and (min-width: 1201px) {
 }
@@ -170,6 +191,38 @@ a {
 
 /* MOBILE PHONE */
 @media screen and (max-width: 480px) {
+  .item {
+    flex-grow: 4;
+  }
+
+  /* HEADER */
+  header {
+    margin: 0;
+    padding: 0;
+  }
+
+  header > * {
+    margin: 0;
+  }
+
+  header .item {
+    flex-grow: 1;
+    margin: 0;
+  }
+  header a {
+    /* title */
+    font-size: 1em;
+  }
+
+  /* NAV */
+
+  /* MAIN */
+  main {
+    padding: 0.25em;
+    margin: 0.25em;
+  }
+
+  /* FOOTER */
 }
 
 /*
