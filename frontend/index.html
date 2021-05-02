@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>ihavetime</title>
         <meta name="author" content="Fabien Lometti, Xavier Perret">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="res/css/style.css">
         <link rel="icon" href="res/img/hourglass_full_black_24dp.svg">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,15 +14,18 @@
     </head>
 
     <body class="wrapper">
-
-        <header id="header">
-            <a href="index.html"><img src="res/img/fleurette.png" alt="Art contemporain d'une fleur, logo du site">
-                ihavetime</a>
+        <header>
+            <img src="res/img/fleurette.png" alt="Art contemporain d'une fleur, logo du site" id="logo" class="item" />
+            <a href="index.html" class="item" id="home">ihavetime</a>
+            <div class="item emptySpace"></div>
+            <a href="signup.html" class="item">signup</a>
+            <a href="profile.html" class="item">signin</a>
         </header>
 
 
         <nav>
             Lancer une recherche
+            <div class="item">
             <form action="" method="post">
                 <label for="rangePrice">Prix de l'activité</label>
                 <input type="range" min="1 max="100" value="50" class="slider" id="rangePrice">
@@ -31,21 +35,20 @@
                 <input type="range" min="1 max="100" value="50" class="slider" id="rangeParticipants">
                 <button type="submit">
             </form>
+            </div>
         </nav>
 
-        <main class="container">
+        <main>
           
         </main>
 
-        <footer class="container">
-            <div class="item">
+        <footer>
                 <details><summary>A propos</summary>
                        <p>Site pour trouver des activités à effectuer pendant son temps libre. <br/>Créer par Xavier Perret et Fabien Lometti dans le cadre
                            du cours d'Architecture Web de l'HEPIA.
                            <br/>HES-SO Mai 2021.
                        </p>
                 </details>
-            </div>
         </footer>
         <script src="script.js" ></script>
     </body>
