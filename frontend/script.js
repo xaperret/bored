@@ -1,37 +1,3 @@
-/*
-var element = document.createElement("div");
-element.className = "item activity";
-let pActivity = document.createElement("h1");
-let pType = document.createElement("p");
-let pParticipants = document.createElement("p");
-let pPrice = document.createElement("p");
-let pAccessibility = document.createElement("p");
-var mainSection = document.querySelector("main");
-fetch("http://www.boredapi.com/api/activity/")
-  .then((res) => res.json())
-  .then((data) => dataShow(data));
-
-function dataShow(data) {
-  pActivity.append(data.activity);
-  pType.append(data.type);
-  pParticipants.append(data.participants);
-  pAccessibility.append(data.accessibility);
-  element.append(pActivity);
-  element.append(pType);
-  element.append(pParticipants);
-  element.append(pAccessibility);
-  mainSection.append(element);
-}
-
-let activity = {
-  activity: "Teach your dog a new trick",
-  accessibility: 0.15,
-  type: "relaxation",
-  participants: 1,
-  price: 0.05,
-};
-*/
-
 const BORED_API = "http://www.boredapi.com/api/activity";
 
 /**
@@ -127,17 +93,27 @@ function generateActivityHtml(
 }
 
 /**
+ * Creates an activity and add it to given parentElement
  *
- * @param {*} mode
- * @param {*} information
+ * Wrapper for createRequest, generateActivityHtml
+ *
+ * @param {*} mode          is the request to make to the api @see createRequest
+ * @param {*} information   is the information to be passed to api, use string array if more than one information
+ * @param {*} parentElement is the css selector to add the new activity
  */
-function generateNewActivity(mode = 0, information = "/") {
+function generateNewActivity(
+  mode = 0,
+  information = "/",
+  parentElement = "main"
+) {
   let req = createRequest(mode, information);
-  let main_el = document.querySelector("main");
+  let main_el = document.querySelector(parentElement);
 
   fetch(req)
     .then((res) => res.json())
     .then((res) => generateActivityHtml("item activity", main_el, res));
 }
 
-generateNewActivity();
+//for (let i = 0; i < 10; i++) {
+//  generateNewActivity();
+//}
