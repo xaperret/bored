@@ -12,9 +12,7 @@ const JOKES_LIMIT = 10;
 export default {
 
   init: () => {
-    // TODO events.listen(events.MY_JOKES_BTN_CLICKED, retreiveMyJokes);
     events.listen([events.RANDOM_JOKES_BTN_CLICKED, events.LOGIN_SUCCEED], retreiveRandomJokes);
-    // TODO events.listen(events.BEST_JOKES_BTN_CLICKED, retreiveBestJokes);
     events.listen(events.LAST_JOKES_BTN_CLICKED, retreiveLastJokes);
     events.listen(events.LIKE_JOKE_BTN_CLICKED, likeJoke);
     events.listen(events.DISLIKE_JOKE_BTN_CLICKED, dislikeJoke);
@@ -90,9 +88,9 @@ function checkLike(data) {
     const userEmail = login.getConnectedUserEmail();
     data.forEach(joke => {
       return fetch('//localhost:8080/api/v1/likes/' + userEmail + '/' + joke.id)
-        .then(response => response.text())
+        .then(response => response.json())
         .then(result => {
-          if(result === 'true') {
+          if(result.isLiked) {
             events.send(events.RETREIVE_LIKE_SUCCEED, { jokeId: joke.id});
           }
         });

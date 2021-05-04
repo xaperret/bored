@@ -32,7 +32,6 @@ function displayUserConnected(data) {
   document.getElementById('user-disconnected').style.display = 'none';
   document.getElementById('user-connected').style.display = 'flex';
   
-  // document.getElementById('my-jokes').disabled = false;
   document.getElementById('welcome-user').innerHTML = 'Connecté: ' + data.userEmail;
   
   changeDisabledPropertyForAllLikeBtn(false);
@@ -47,8 +46,6 @@ function displayUserLoginError(data) {
 function displayUserDisconnected() {
   document.getElementById('user-connected').style.display = 'none';
   document.getElementById('user-disconnected').style.display = 'flex';
-  
-  // document.getElementById('my-jokes').disabled = true;
   
   changeDisabledPropertyForAllLikeBtn(true);
 }

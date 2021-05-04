@@ -20,7 +20,6 @@ export default {
 function login(data) {
   console.log('Connecting...');
 
-  // TODO regex for mail
   if (validateEmail(data.userEmail)) {
     userEmail = data.userEmail;
     events.send(events.LOGIN_SUCCEED, data);
