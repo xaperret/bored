@@ -96,16 +96,16 @@ Une authentification sans mot de passe permet l'identification de l'utilisateur 
 
 ### Interface REST API
 
-Voici l'API REST CRUD exposée par le backend
+Voici l'API REST CRUD exposée par le backend sur /api/v1/
 
-| Verbe HTTP | Endpoint                 | Données     | Description |
-|:-----------|:-------------------------|:------------|:------------|
-| GET        | emails/                  |             | Retourne la liste des mails des utilisateurs |
-| GET        | evaluated-jokes/         |             | Retourne les blagues les mieux notées |
-| GET        | evaluated-jokes/*:email* | email*      | Retourne les blagues notées par l'utilisateur |
-| POST       | evaluated-jokes/         | email*, id* | Ajout d'une nouvelle note à la blague (id) |
-| PUT        | evaluated-jokes/         | email*, id* | Modification de la note de la blague (id) |
-| DELETE     | evaluated-jokes/         | email*, id* | Suppression de la note de la blague (id) |
+| Verbe HTTP | Endpoint                     | Données               | Description |
+|:-----------|:-----------------------------|:----------------------|:------------|
+| GET        | emails/                      |                       | Retourne la liste des mails des utilisateurs |
+| GET        | jokes/:limit                 |                       | Retourne les blagues les mieux notées |
+| GET        | jokes/*:userEmail*/:limit    |                       | Retourne les blagues notées par l'utilisateur |
+| POST       | jokes/                       | userEmail\*, jokeId\* | Ajout d'une nouvelle note à la blague (jokeId) |
+| DELETE     | jokes/                       | userEmail\*, jokeId\* | Suppression de la note de la blague (jokeId) |
+| GET        | likes/*:userEmail*/*:jokeId* |                       | Retourne la note d'une blague (jokeId) |
 
 \* Obligatoire
 
