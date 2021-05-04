@@ -84,9 +84,9 @@ Pour stopper le serveur Node, utilisez la commande **CTRL + C**
 
 Voici la liste des fonctionnalités de l'Application Web:
 
-- Récupération des blagues sur l'API public (non-implémenté)
-- Récupération des dernières blagues publiées (non-implémenté)
-- Gestion de la notation de blagues (non-implémenté)
+- Récupération des blagues sur l'API public (implémenté)
+- Récupération des dernières blagues publiées (implémenté)
+- Gestion de la notation de blagues (implémenté)
 - Récupération des blagues les mieux notées par les utilisateurs (non-implémenté)
 - Récupération des blagues notées par un utilisateur (non-implémenté)
 
