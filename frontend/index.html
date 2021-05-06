@@ -36,42 +36,53 @@
         <a href="signup.html" class="item">signup</a>
         <a href="profile.html" class="item">signin</a>
       </div>
-      <span class="material-icons material-icons-outlined item">menu</span>
-      <div class="menuAside">
-        <a href="best.html" class="item">best</a>
-        <a href="favorite.html" class="item">favorites</a>
-        <a href="random.html" class="item">random</a>
+      <div class="fullMenuAside item">
+        <span
+          class="material-icons material-icons-outlined"
+          id="menuButtonHeader"
+          >menu</span
+        >
+        <div class="menuAside">
+          <h1 class="item">quick access activities</h1>
+          <a href="best.html" class="item"> -> the best of the best</a>
+          <a href="favorite.html" class="item"> -> the favorites</a>
+          <a href="random.html" class="item"> -> and i've got luck</a>
+          <a href="myfavorite.html" class="item personnalSection">
+            => my favs</a
+          >
+          <a href="mypastactivities.html" class="item personnalSection">
+            => my pasts activities</a
+          >
+        </div>
       </div>
     </header>
 
     <nav>
-      <div class="item searchButton">
-        <span class="material-icons material-icons-outlined"> search </span
-        >search
-      </div>
-      <div class="item search">
-        <form action="" method="post">
-          <label for="rangePrice">Prix de l'activité</label>
-          <input type="range" min="1 max="100" value="50" class="slider"
-          id="rangePrice">
-          <label for="rangeAccess">Accessibilité de l'activité</label>
-          <input type="range" min="1 max="100" value="50" class="slider"
-          id="rangeAccess">
-          <label for="rangeParticipants"
-            >Nombre de participants de l'activité</label
-          >
-          <input type="range" min="1 max="100" value="50" class="slider"
-          id="rangeParticipants">
-          <button type="submit">Recherche</button>
+      <div class="container">
+        <form class="item">
+          <input type="text" />
+          <button id="submitButton">
+            <span class="material-icons" id="menuButtonHeader"> search </span
+            >search
+          </button>
         </form>
       </div>
+      <span class="item material-icons material-icons-outlined">
+        expand_more
+      </span>
+      <span>Advanced Search</span>
     </nav>
 
     <div class="containerAsideMain">
       <aside>
-        <a href="best.html" class="item">best</a>
-        <a href="favorite.html" class="item">favorites</a>
-        <a href="random.html" class="item">random</a>
+        <h1 class="item">quick access activities</h1>
+        <a href="best.html" class="item"> -> the best of the best</a>
+        <a href="favorite.html" class="item"> -> the favorites</a>
+        <a href="random.html" class="item"> -> and i've got luck</a>
+        <a href="myfavorite.html" class="item personnalSection"> => my favs</a>
+        <a href="mypastactivities.html" class="item personnalSection">
+          => my pasts activities</a
+        >
       </aside>
 
       <main></main>

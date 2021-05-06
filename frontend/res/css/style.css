@@ -97,7 +97,7 @@ header a:hover {
   color          : #eb5e28;
 }
 
-header .material-icons-outlined {
+header .fullMenuAside {
   display: none;
 }
 
@@ -129,28 +129,47 @@ nav {
   display        : flex;
   align-content  : center;
   align-items    : center;
-  justify-content: space-around;
+  justify-content: flex-start;
+  flex-wrap      : wrap;
+  flex-direction : row;
+}
+
+nav .container {
+  flex-direction : row;
   flex-wrap      : nowrap;
+  align-self     : flex-start;
+  align-items    : center;
+  justify-content: flex-start;
+  min-width      : 100%;
 }
 
-nav form {
-  margin : 0.5em;
-  padding: 0.5em;
+nav .container form {
+  flex-grow      : 1;
+  display        : flex;
+  align-content  : center;
+  align-items    : center;
+  justify-content: flex-start;
+  flex-wrap      : nowrap;
+  flex-direction : row;
 }
 
-nav .searchButton {
-  font-style : oblique;
-  font-weight: bold;
+nav .container form input,
+nav .container form button {
+  min-height   : 2em;
+  border-radius: 8px;
+  margin       : 0.25em;
+  font-family  : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  align-self   : center;
 }
 
-nav .searchButton:hover {
-  color          : #eb5e28;
-  text-decoration: underline;
+nav .container form input {
+  flex-grow       : 1;
+  background-color: #fffcf2;
 }
 
-nav .search {
-  display: none;
-}
+/* 
+nav .container form button {}
+*/
 
 /* MAIN */
 main {
@@ -184,6 +203,7 @@ main .activity h1 {
 
 /* ASIDE */
 aside {
+  font-family     : "Roboto Mono", monospace;
   background-color: #fffcf2;
   border-radius   : 8px;
   margin          : 1em;
@@ -193,6 +213,10 @@ aside {
   align-content   : center;
   align-items     : center;
   flex-wrap       : nowrap;
+}
+
+aside h1 {
+  font-style: italic;
 }
 
 aside .item {
@@ -288,11 +312,18 @@ a {
     display: none;
   }
 
-  header .material-icons-outlined {
-    display         : flex;
+  #menuButtonHeader {
     color           : #252422;
     background-color: #fffcf2;
     border-radius   : 8px;
+  }
+
+  header .fullMenuAside {
+    display: flex;
+  }
+
+  header .fullMenuAside:hover .menuAside {
+    display: block;
   }
 
   #home {
@@ -305,6 +336,10 @@ a {
   main {
     padding: 0.25em;
     margin : 0.25em;
+  }
+
+  aside {
+    display: none;
   }
 
   /* FOOTER */
