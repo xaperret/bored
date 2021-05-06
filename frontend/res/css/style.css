@@ -15,10 +15,22 @@ html {
   background-color: #252422;
 }
 
+/* FLEXBOX */
+
 .wrapper {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height    : 100vh;
+}
+
+.container {
+  /* most containers */
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-evenly;
+  align-content  : flex-start;
+  align-items    : flex-start;
+  flex-wrap      : wrap;
 }
 
 /* BODY */
@@ -28,95 +40,146 @@ body {
 
 /* FOOTER */
 footer {
-  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
-  color: #fffcf2;
+  font-family     : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  color           : #fffcf2;
   background-color: #eb5e28;
-  margin: auto 0;
-}
-
-footer .item {
-  margin: 5px auto 5px;
-}
-
-.content {
-  color: aquamarine;
+  display         : flex;
+  align-content   : center;
+  align-items     : center;
+  justify-content : center;
 }
 
 /* HEADER */
-header img {
+header {
+  padding        : 0;
+  display        : flex;
+  align-content  : center;
+  align-items    : center;
+  justify-content: flex-start;
+  flex-wrap      : nowrap;
+}
+
+header .item {
+  align-self: center;
+  margin    : 1em;
+}
+
+header .emptySpace {
+  flex-grow: 4;
+}
+
+header a img {
   /* icon in header */
-  max-width: 100px;
+  max-width : 100px;
   max-height: 100px;
+  margin    : 0;
 }
 
 header a {
-  font-family: "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
-  font-size: 1.5em;
-  color: #fffcf2;
+  font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
   text-decoration: none;
+  color          : #fffcf2;
+}
+
+header a:hover {
+  text-decoration: underline;
+  color          : #eb5e28;
+}
+
+header .material-icons-outlined {
+  display: none;
+}
+
+#home {
+  /* title */
+  font-family    : "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
+  font-size      : 2em;
+  color          : #fffcf2;
+  text-decoration: none;
+  margin         : 1em 1em 1em 0;
+}
+
+#home:hover {
+  color: #eb5e28;
 }
 
 /* NAV */
 nav {
-  margin: 1em;
-  padding: 1em;
-  border-radius: 8px;
-  color: #403d39;
-  background: #fffcf2;
-  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  margin         : 1em;
+  padding        : 1em;
+  border-radius  : 8px;
+  color          : #403d39;
+  background     : #fffcf2;
+  font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  display        : flex;
+  align-content  : center;
+  align-items    : center;
+  justify-content: flex-start;
+  flex-wrap      : nowrap;
 }
 
 nav form {
-  margin: 0.5em;
+  margin : 0.5em;
   padding: 0.5em;
+}
+
+nav .searchButton {
+  font-style : oblique;
+  font-weight: bold;
+}
+
+nav .searchButton:hover {
+  color          : #eb5e28;
+  text-decoration: underline;
+}
+
+nav .search {
+  display: none;
 }
 
 /* MAIN */
 main {
-  margin: 1em;
-  border-radius: 8px;
-  color: #342e37;
-  height: 80%;
-  flex-grow: 1;
-  padding: 1em;
+  margin         : 1em;
+  border-radius  : 8px;
+  color          : #342e37;
+  height         : 80%;
+  flex-grow      : 1;
+  padding        : 1em;
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-evenly;
+  align-content  : flex-start;
+  align-items    : flex-start;
+  flex-wrap      : wrap;
 }
 
-main .item {
-  flex-basis: 10em;
-  border: 3px #ccc5b9 solid;
+main .activity {
+  flex-basis   : 10em;
+  border       : 3px #ccc5b9 solid;
   border-radius: 8px;
-  padding: 1em;
-  margin: 0.5em;
-  background: #fffcf2;
+  padding      : 1em;
+  margin       : 0.5em;
+  background   : #fffcf2;
 }
 
-main .item h1 {
+main .activity h1 {
   font-weight: bold;
-  font-size: 1em;
+  font-size  : 1em;
 }
 
 a {
   text-decoration: underline;
-  color: #3c91e6;
+  color          : #3c91e6;
 }
 
 /* LINKS */
 a {
   text-decoration: underline;
-  color: #eb5e28;
-  font-family: "Roboto Mono", monospace;
+  color          : #eb5e28;
+  font-family    : "Roboto Mono", monospace;
 }
 
 /* CLASSES */
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
 .activity {
   font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
 }
@@ -127,37 +190,37 @@ a {
 
 .slider {
   /* snippet from https://www.w3schools.com/howto/howto_js_rangeslider.asp */
-  -webkit-appearance: none; /* Override default CSS styles */
-  appearance: none;
-  width: 100%; /* Full-width */
-  height: 25px; /* Specified height */
-  background: #eb5e28; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
-  transition: opacity 0.2s;
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  appearance        : none;
+  width             : 100%;
+  /* Full-width */
+  height            : 25px;
+  /* Specified height */
+  background        : #eb5e28;
+  /* Grey background */
+  outline           : none;
+  /* Remove outline */
+  opacity           : 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s;
+  /* 0.2 seconds transition on hover */
+  transition        : opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 1px solid #403d39;
-  background: #fffcf2;
-  cursor: pointer;
-}
-
-/* ID */
-#header {
-  font-family: "Interstellar";
-  font-size: 2em;
+  appearance        : none;
+  width             : 25px;
+  height            : 25px;
+  border-radius     : 50%;
+  border            : 1px solid #403d39;
+  background        : #fffcf2;
+  cursor            : pointer;
 }
 
 /* Extra large screens, TV */
-@media screen and (min-width: 1201px) {
-}
+@media screen and (min-width: 1201px) {}
 
 /*
 769 -> 1024px => small screens, laptop
@@ -165,11 +228,52 @@ a {
 */
 
 /* TABLETS */
-@media screen and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
 
 /* MOBILE PHONE */
 @media screen and (max-width: 480px) {
+  .item {
+    flex-grow: 4;
+  }
+
+  /* HEADER */
+  header {
+    margin : 0;
+    padding: 0;
+  }
+
+  header>* {
+    margin: 0;
+  }
+
+  header .item {
+    flex-grow: 1;
+    margin   : 0;
+  }
+
+  header a {
+    /* title */
+    font-size: 1em;
+  }
+
+  header .material-icons-outlined {
+    display: flex;
+    color  : #fffcf2;
+  }
+
+  #home {
+    display: none;
+  }
+
+  /* NAV */
+
+  /* MAIN */
+  main {
+    padding: 0.25em;
+    margin : 0.25em;
+  }
+
+  /* FOOTER */
 }
 
 /*
