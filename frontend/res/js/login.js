@@ -24,7 +24,6 @@ function login(data) {
     userEmail = data.userEmail;
     events.send(events.LOGIN_SUCCEED, data);
   } else {
-    // TODO Display error
     events.send(events.LOGIN_FAILED);
   }
   

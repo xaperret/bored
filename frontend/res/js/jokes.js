@@ -50,7 +50,7 @@ function filterLastJokes(jokes, nbr) {
 }
 
 function likeJoke(data) {
-  if(login.isUserConnected()) {
+  if (login.isUserConnected()) {
     data.userEmail = login.getConnectedUserEmail();
     const config = getConfigJSON(data, 'POST');
 
@@ -67,13 +67,13 @@ function likeJoke(data) {
 }
 
 function dislikeJoke(data) {
-  if(login.isUserConnected()) {
+  if (login.isUserConnected()) {
     data.userEmail = login.getConnectedUserEmail();
     const config = getConfigJSON(data, 'DELETE');
 
     return fetch('//localhost:8080/api/v1/jokes', config)
       .then(function(response) {
-        if(response.status === 202) {
+        if (response.status === 202) {
           events.send(events.DISLIKE_JOKE_SUCCEED, data);
         } else {
           events.send(events.DISLIKE_JOKE_FAILED, response.error);
@@ -84,7 +84,7 @@ function dislikeJoke(data) {
 }
 
 function checkLike(data) {
-  if(login.isUserConnected()) {
+  if (login.isUserConnected()) {
     const userEmail = login.getConnectedUserEmail();
     data.forEach(joke => {
       return fetch('//localhost:8080/api/v1/likes/' + userEmail + '/' + joke.id)

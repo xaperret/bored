@@ -8,6 +8,7 @@ display.init();
 jokes.init();
 login.init();
 
+// Intialize input events from user
 document.getElementById('login-btn').onclick = () => {
   const userEmailElement = document.getElementById('user-email');
   events.send(events.LOGIN_BTN_CLICKED, { userEmail: userEmailElement.value })

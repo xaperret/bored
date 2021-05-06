@@ -65,7 +65,7 @@ function displayTitle(title) {
 function displayJokes(jokeArray) {
   emptyJokeContainer();
 
-  for(let joke of jokeArray) {
+  for (let joke of jokeArray) {
     displayJoke(joke);
   }
 }
