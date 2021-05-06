@@ -12,6 +12,7 @@ function createRequest(mode, information = "/") {
   let output = BORED_API;
   switch (mode) {
     case 0: // random
+      output += "";
       break;
     case 1: // key
       output += "?key=" + information[0];
