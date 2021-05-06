@@ -16,25 +16,35 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Original+Surfer&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="wrapper">
     <header>
-      <img
-        src="res/img/fleurette.png"
-        alt="Art contemporain d'une fleur, logo du site"
-        id="logo"
-        class="item"
-      />
+      <a href="index.html" class="item">
+        <img
+          src="res/img/fleurette.png"
+          alt="Art contemporain d'une fleur, logo du site"
+          id="logo"
+      /></a>
       <a href="index.html" class="item" id="home">ihavetime</a>
       <div class="item emptySpace"></div>
-      <a href="signup.html" class="item">signup</a>
-      <a href="profile.html" class="item">signin</a>
+      <div class="item">
+        <a href="signup.html" class="item">signup</a>
+        <a href="profile.html" class="item">signin</a>
+      </div>
+      <span class="material-icons material-icons-outlined item">menu</span>
     </header>
 
     <nav>
-      Lancer une recherche
-      <div class="item">
+      <div class="item searchButton">
+        <span class="material-icons material-icons-outlined"> search </span
+        >search
+      </div>
+      <div class="item search">
         <form action="" method="post">
           <label for="rangePrice">Prix de l'activité</label>
           <input type="range" min="1 max="100" value="50" class="slider"
@@ -50,6 +60,9 @@
           <button type="submit">Recherche</button>
         </form>
       </div>
+      <a href="best.html" class="item">best</a>
+      <a href="favorite.html" class="item">favorites</a>
+      <a href="random.html" class="item">random</a>
     </nav>
 
     <main></main>
