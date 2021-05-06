@@ -1,0 +1,83 @@
+/* IMPORTS */
+/*
+ *@font-face {
+  font-family: Interstellar;
+  src: url("../font/001\ Interstellar\ Log\ Regular.ttf");
+}
+*/
+
+/* COMMON */
+* {
+  margin: 0;
+}
+
+:root{
+  --color-dark-background : #252422;
+  --color-highlight : #ec7b10;
+  --color-light-background :#e66916 ;
+  --color-light-text : #fffcf2;
+  --color-dark-text : #403d39;
+  --color-radial-background :  #bda53c;
+}
+
+
+div {
+  margin: 0 auto ;
+  margin-top: 3em;
+  border-radius: 4px;
+  padding : 12px 8px;
+  width: 300px;
+  background-color:var(--color-dark-background);
+}
+
+a{
+  margin: 1em;
+  border: #252422 2px;
+  color: #252422;
+}
+
+input:focus { 
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid var(--color-light-text);
+}
+body{
+  min-height:100vh;
+  background: radial-gradient(var(--color-radial-background),var(--color-light-background));
+}
+label {
+  margin-left: 10px;
+  font-family: Verdana;
+  display: block;
+  font-weight: lighter;
+  color:var(--color-highlight);
+  margin-bottom: 4px;
+}
+
+input {
+  border-radius: 3px;
+  margin : 10px ;
+}
+input[type="submit"]:active {
+  background-color:var(--color-light-background);
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+input[type="submit"] {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: var(--color-dark-text);
+  background-color: var(--color-light-background);
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--color-dark-text) 0 5px ;
+  
+}
