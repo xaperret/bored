@@ -11,8 +11,17 @@
   margin: 0;
 }
 
+:root{
+  --color-dark-background : #252422;
+  --color-highlight : #ec7b10;
+  --color-light-background :#e66916 ;
+  --color-light-text : #fffcf2;
+  --color-dark-text : #403d39;
+
+}
+
 html {
-  background-color: #252422;
+  background-color: var(--color-dark-background);
 }
 
 /* FLEXBOX */
@@ -41,8 +50,8 @@ body {
 /* FOOTER */
 footer {
   font-family     : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
-  color           : #fffcf2;
-  background-color: #eb5e28;
+  color           :var(--color-light-text);
+  background-color:var(--color-light-background);
   display         : flex;
   align-content   : center;
   align-items     : center;
@@ -78,12 +87,12 @@ header a img {
 header a {
   font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
   text-decoration: none;
-  color          : #fffcf2;
+  color          :var(--color-light-text);
 }
 
 header a:hover {
   text-decoration: underline;
-  color          : #eb5e28;
+  color          :var(--color-highlight);
 }
 
 header .material-icons-outlined {
@@ -94,13 +103,13 @@ header .material-icons-outlined {
   /* title */
   font-family    : "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
   font-size      : 2em;
-  color          : #fffcf2;
+  color          :var(--color-light-text);
   text-decoration: none;
   margin         : 1em 1em 1em 0;
 }
 
 #home:hover {
-  color: #eb5e28;
+  color: var(--color-highlight);
 }
 
 /* NAV */
@@ -108,8 +117,8 @@ nav {
   margin         : 1em;
   padding        : 1em;
   border-radius  : 8px;
-  color          : #403d39;
-  background     : #fffcf2;
+  color          : var(--color-dark-text);
+  background     : var(--color-light-text);
   font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
   display        : flex;
   align-content  : center;
@@ -129,7 +138,7 @@ nav .searchButton {
 }
 
 nav .searchButton:hover {
-  color          : #eb5e28;
+  color          : var(--color-highlight);
   text-decoration: underline;
 }
 
@@ -141,7 +150,7 @@ nav .search {
 main {
   margin         : 1em;
   border-radius  : 8px;
-  color          : #342e37;
+  color          : var(--color-dark-text);
   height         : 80%;
   flex-grow      : 1;
   padding        : 1em;
@@ -155,11 +164,11 @@ main {
 
 main .activity {
   flex-basis   : 10em;
-  border       : 3px #ccc5b9 solid;
+  border       : var(--color-dark-background) 3px solid;
   border-radius: 8px;
   padding      : 1em;
   margin       : 0.5em;
-  background   : #fffcf2;
+  background   : var(--color-light-text);
 }
 
 main .activity h1 {
@@ -167,15 +176,11 @@ main .activity h1 {
   font-size  : 1em;
 }
 
-a {
-  text-decoration: underline;
-  color          : #3c91e6;
-}
 
 /* LINKS */
 a {
   text-decoration: underline;
-  color          : #eb5e28;
+  color          : var(--color-light-background);
   font-family    : "Roboto Mono", monospace;
 }
 
@@ -197,7 +202,7 @@ a {
   /* Full-width */
   height            : 25px;
   /* Specified height */
-  background        : #eb5e28;
+  background        : var(--color-light-background);
   /* Grey background */
   outline           : none;
   /* Remove outline */
@@ -214,8 +219,8 @@ a {
   width             : 25px;
   height            : 25px;
   border-radius     : 50%;
-  border            : 1px solid #403d39;
-  background        : #fffcf2;
+  border            : var(--color-dark-text) 1px solid;
+  background        : var(--color-light-text);
   cursor            : pointer;
 }
 
@@ -258,7 +263,7 @@ a {
 
   header .material-icons-outlined {
     display: flex;
-    color  : #fffcf2;
+    color  : var(--color-light-text);
   }
 
   #home {
