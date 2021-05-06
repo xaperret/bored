@@ -30,12 +30,13 @@ div {
   background-color:var(--color-dark-background);
 }
 
-a{
-  margin: 1em;
-  border: #252422 2px;
-  color: #252422;
-}
 
+
+h1{
+  margin: auto;
+  width: 300px;
+  font-family    : "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
+}
 input:focus { 
   outline: none;
 }
@@ -60,13 +61,13 @@ input {
   border-radius: 3px;
   margin : 10px ;
 }
-input[type="submit"]:active {
+button:active {
   background-color:var(--color-light-background);
-  box-shadow: 0 3px #666;
+  box-shadow: var(--color-dark-text) 0 3px;
   transform: translateY(4px);
 }
 
-input[type="submit"] {
+button {
   display: inline-block;
   padding: 5px 5px;
   font-size: 10px;

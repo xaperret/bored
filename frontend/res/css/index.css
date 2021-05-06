@@ -20,7 +20,28 @@
 
 }
 
+button:active {
+  background-color:var(--color-light-background);
+  box-shadow: var(--color-dark-text) 0 3px ;
+  transform: translateY(4px);
+}
 
+button {
+  margin-right: 10px;
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: var(--color-dark-text);
+  background-color: var(--color-light-background);
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--color-dark-text) 0 5px ;
+  
+}
 
 html {
   background-color: var(--color-dark-background);

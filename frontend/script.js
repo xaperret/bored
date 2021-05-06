@@ -89,8 +89,19 @@ function generateActivityHtml(
   activityAccess.append(activity.accessibility);
   element.append(activityAccess);
 
+  let likeButton = document.createElement('button');
+  let dislikeButton = document.createElement('button');
+  likeButton.innerHTML = 'like';
+  dislikeButton.innerHTML = 'dislike';
+  element.append(likeButton);
+  element.append(dislikeButton);
+  
   parentElement.append(element);
 }
+
+
+
+
 
 /**
  * Creates an activity and add it to given parentElement
@@ -114,6 +125,6 @@ function generateNewActivity(
     .then((res) => generateActivityHtml("item activity", main_el, res));
 }
 
-// for (let i = 0; i < 10; i++) {
-//   generateNewActivity();
-// }
+for (let i = 0; i < 10; i++) {
+  generateNewActivity();
+}
