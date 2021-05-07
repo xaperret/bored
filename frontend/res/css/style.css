@@ -131,19 +131,50 @@ nav {
   align-items    : center;
   justify-content: flex-start;
   flex-wrap      : wrap;
-  flex-direction : row;
+  flex-direction : column;
 }
 
 nav .container {
-  flex-direction : row;
-  flex-wrap      : nowrap;
+  flex-direction : column;
+  flex-wrap      : wrap;
   align-self     : flex-start;
   align-items    : center;
   justify-content: flex-start;
   min-width      : 100%;
 }
 
-nav .container form {
+nav .navbarSearchCategories {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : nowrap;
+  flex-grow     : 1;
+  min-width     : 100%;
+}
+
+nav .navbarSearchCategories button {
+  flex-grow     : 1;
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : nowrap;
+  align-items   : center;
+  padding       : 0.25em;
+  min-height    : 3em;
+  min-width     : 3em;
+  border-radius : 8px;
+  margin        : 0.25em;
+  font-family   : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  align-self    : center;
+}
+
+nav .navbarSearch {
+  min-width     : 100%;
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : nowrap;
+  align-items   : center;
+}
+
+nav .navbarSearch form {
   flex-grow      : 1;
   display        : flex;
   align-content  : center;
@@ -153,8 +184,8 @@ nav .container form {
   flex-direction : row;
 }
 
-nav .container form input,
-nav .container form button {
+nav .navbarSearch form input,
+nav .navbarSearch form button {
   min-height   : 2em;
   border-radius: 8px;
   margin       : 0.25em;
@@ -162,9 +193,15 @@ nav .container form button {
   align-self   : center;
 }
 
-nav .container form input {
+nav .navbarSearch form input {
   flex-grow       : 1;
   background-color: #fffcf2;
+}
+
+
+
+#rangeApi {
+  display: none;
 }
 
 /* 
@@ -180,11 +217,10 @@ main {
   flex-grow      : 1;
   padding        : 1em;
   display        : flex;
-  flex-direction : row;
+  flex-flow      : row wrap;
   justify-content: space-evenly;
   align-content  : flex-start;
   align-items    : flex-start;
-  flex-wrap      : wrap;
 }
 
 main .activity {
@@ -331,6 +367,12 @@ a {
   }
 
   /* NAV */
+  input[type="text"],
+  select {
+    /* to reduce input text bar */
+    width     : 100%;
+    box-sizing: border-box;
+  }
 
   /* MAIN */
   main {
@@ -343,6 +385,11 @@ a {
   }
 
   /* FOOTER */
+
+  /* CLASSES */
+  .btnText {
+    display: none;
+  }
 }
 
 /*

@@ -58,20 +58,53 @@
     </header>
 
     <nav>
-      <div class="container">
+      <div class="navbarSearchCategories">
+        <button id="btnSearchInput">
+          <span class="material-icons material-icons-outlined item">
+            short_text
+          </span>
+          <div class="btnText">key</div>
+        </button>
+        <button id="btnSearchAccessibility">
+          <span class="material-icons material-icons-outlined">
+            accessible_forward
+          </span>
+          <div class="btnText">accessibility</div>
+        </button>
+        <button id="btnSearchPrice">
+          <span class="material-icons material-icons-outlined">
+            attach_money
+          </span>
+          <div class="btnText">price</div>
+        </button>
+        <button id="btnSearchType">
+          <span class="material-icons material-icons-outlined">
+            format_list_bulleted
+          </span>
+          <div class="btnText">type</div>
+        </button>
+        <button id="btnSearchParticipants">
+          <span class="material-icons material-icons-outlined"> groups </span>
+          <div class="btnText">participants</div>
+        </button>
+      </div>
+      <div class="navbarSearch">
         <form class="item">
-          <input type="text" />
-          <input type="range" />
-          <button id="submitButton">
-            <span class="material-icons" id="menuButtonHeader"> search </span
-            >search
+          <input type="text" id="searchInput" />
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider"
+            id="rangeApi"
+          />
+          <button id="btnSubmit">
+            <span class="material-icons" id="menuButtonHeader"> search </span>
+            <div class="btnText">search</div>
           </button>
         </form>
       </div>
-      <span class="item material-icons material-icons-outlined">
-        expand_more
-      </span>
-      <span>Advanced Search</span>
     </nav>
 
     <div class="containerAsideMain">
