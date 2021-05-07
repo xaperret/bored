@@ -115,7 +115,6 @@ function generateNewActivity(
     .then((res) => generateActivityHtml("item activity", main_el, res));
 }
 
-/* for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 15; i++) {
   generateNewActivity();
 }
- */
