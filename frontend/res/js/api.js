@@ -8,11 +8,10 @@ const BORED_API = "http://www.boredapi.com/api/activity";
  * @param {* String array} information  containing informations for the request
  * @returns
  */
-function createRequest(mode, information = "/") {
+ function createRequest(mode, information = "/") {
   let output = BORED_API;
   switch (mode) {
     case 0: // random
-      output += "";
       break;
     case 1: // key
       output += "?key=" + information[0];
@@ -55,20 +54,56 @@ function createRequest(mode, information = "/") {
  * @return {} return the element that has been newly created
  */
 function generateActivityHtml(
-  childClassName = "item activity",
   parentElement,
   activity
 ) {
   let element = document.createElement("div");
-  element.className = childClassName;
+  element.className = "activity";
 
-  let activityPicture = document.createElement("img");
-  element.append(activityPicture);
+
 
   let activityName = document.createElement("h1");
   activityName.className = "activityName";
   activityName.append(activity.activity);
   element.append(activityName);
+
+  let imgActivity = document.createElement("span");
+  imgActivity.className = "material-icons material-icons-outlined";
+  switch (activity.type) {
+    case "social":
+      imgActivity.innerHTML = "groups";
+      break;
+    case "recreational":
+      imgActivity.innerHTML = "nature_people";
+      break;
+    case "education":
+      imgActivity.innerHTML = "school";
+      break;
+    case "relaxation":
+      imgActivity.innerHTML = "spa";
+      break;
+    case "busywork":
+      imgActivity.innerHTML = "work";
+      break;
+    case "cooking":
+      imgActivity.innerHTML = "cake";
+      break;
+    case "charity":
+      imgActivity.innerHTML = "volunteer_activism";
+      break;
+    case "music":
+      imgActivity.innerHTML = "audiotrack";
+      break;
+    case "diy":
+      imgActivity.innerHTML = "brush";
+      break;
+
+    default:
+      break;
+  }
+
+
+  element.append(imgActivity);
 
   let activityType = document.createElement("p");
   activityType.className = "activityType";
@@ -80,22 +115,41 @@ function generateActivityHtml(
   activityParticipants.append(activity.participants);
   element.append(activityParticipants);
 
+ 
+  for (let i = 0; i < activity.price*10; i++) {
+    //console.log(cnt,activity.price);
+    let imgPrice = document.createElement("span");
+    imgPrice.className = "material-icons material-icons-outlined";
+    imgPrice.innerHTML = "attach_money";
+    element.append(imgPrice);
+    
+  }
+  if(activity.price==0){
+    let imgPrice = document.createElement("span");
+    imgPrice.className = "material-icons material-icons-outlined";
+    imgPrice.innerHTML = "money_off";
+    element.append(imgPrice);
+  }
+
   let activityPrice = document.createElement("p");
   activityPrice.className = "activityPrice";
   activityPrice.append(activity.price);
   element.append(activityPrice);
 
+  
   let activityAccess = document.createElement("p");
   activityAccess.className = "activityAccess";
   activityAccess.append(activity.accessibility);
   element.append(activityAccess);
 
-  let likeButton = document.createElement("button");
-  let dislikeButton = document.createElement("button");
-  likeButton.innerHTML = "like";
-  dislikeButton.innerHTML = "dislike";
+  let likeButton = document.createElement('button');
+  let dislikeButton = document.createElement('button');
+  likeButton.innerHTML = 'like';
+  dislikeButton.innerHTML = 'dislike';
   element.append(likeButton);
   element.append(dislikeButton);
+
+
 
   parentElement.append(element);
 }
