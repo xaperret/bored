@@ -8,7 +8,7 @@ const BORED_API = "http://www.boredapi.com/api/activity";
  * @param {* String array} information  containing informations for the request
  * @returns
  */
- function createRequest(mode, information = "/") {
+function createRequest(mode, information = "/") {
   let output = BORED_API;
   switch (mode) {
     case 0: // random
@@ -105,41 +105,34 @@ function generateActivityHtml(
 
   element.append(imgActivity);
 
-  let activityType = document.createElement("p");
-  activityType.className = "activityType";
-  activityType.append(activity.type);
-  element.append(activityType);
+
 
   let activityParticipants = document.createElement("p");
   activityParticipants.className = "activityParticipants";
-  activityParticipants.append(activity.participants);
+  activityParticipants.append("Participants : " + activity.participants);
   element.append(activityParticipants);
 
- 
-  for (let i = 0; i < activity.price*10; i++) {
+
+  for (let i = 0; i < activity.price * 10; i++) {
     //console.log(cnt,activity.price);
     let imgPrice = document.createElement("span");
     imgPrice.className = "material-icons material-icons-outlined";
     imgPrice.innerHTML = "attach_money";
     element.append(imgPrice);
-    
+
   }
-  if(activity.price==0){
+  if (activity.price == 0) {
     let imgPrice = document.createElement("span");
     imgPrice.className = "material-icons material-icons-outlined";
     imgPrice.innerHTML = "money_off";
     element.append(imgPrice);
   }
 
-  let activityPrice = document.createElement("p");
-  activityPrice.className = "activityPrice";
-  activityPrice.append(activity.price);
-  element.append(activityPrice);
 
-  
+
   let activityAccess = document.createElement("p");
   activityAccess.className = "activityAccess";
-  activityAccess.append(activity.accessibility);
+  activityAccess.append("accessibility[0.0,1.0] : " + activity.accessibility);
   element.append(activityAccess);
 
   let likeButton = document.createElement('button');
