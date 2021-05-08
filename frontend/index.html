@@ -95,8 +95,23 @@
         </button>
       </div>
       <div class="navbarSearch">
-        <form class="item">
+        <form class="item" id="searchKeyForm">
           <input type="text" id="searchInput" />
+          <button id="btnSubmit">
+            <span class="material-icons" id="menuButtonHeader"> search </span>
+            <div class="btnText">search</div>
+          </button>
+        </form>
+        <form class="item" id="searchRangeForm">
+          <input type="range" id="searchRange" />
+          <button id="btnSubmit">
+            <span class="material-icons" id="menuButtonHeader"> search </span>
+            <div class="btnText">search</div>
+          </button>
+        </form>
+        <form class="item" id="search2RangeForm">
+          <input type="range" id="searchRangeMin" />
+          <input type="range" id="searchRangeMax" />
           <button id="btnSubmit">
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
