@@ -8,7 +8,7 @@ const BORED_API = "http://www.boredapi.com/api/activity";
  * @param {* String array} information  containing informations for the request
  * @returns
  */
- function createRequest(mode, information = "/") {
+function createRequest(mode, information = "/") {
   let output = BORED_API;
   switch (mode) {
     case 0: // random
@@ -53,14 +53,9 @@ const BORED_API = "http://www.boredapi.com/api/activity";
  *
  * @return {} return the element that has been newly created
  */
-function generateActivityHtml(
-  parentElement,
-  activity
-) {
+function generateActivityHtml(parentElement, activity) {
   let element = document.createElement("div");
   element.className = "activity";
-
-
 
   let activityName = document.createElement("h1");
   activityName.className = "activityName";
@@ -102,7 +97,6 @@ function generateActivityHtml(
       break;
   }
 
-
   element.append(imgActivity);
 
   let activityType = document.createElement("p");
@@ -115,16 +109,14 @@ function generateActivityHtml(
   activityParticipants.append(activity.participants);
   element.append(activityParticipants);
 
- 
-  for (let i = 0; i < activity.price*10; i++) {
+  for (let i = 0; i < activity.price * 10; i++) {
     //console.log(cnt,activity.price);
     let imgPrice = document.createElement("span");
     imgPrice.className = "material-icons material-icons-outlined";
     imgPrice.innerHTML = "attach_money";
     element.append(imgPrice);
-    
   }
-  if(activity.price==0){
+  if (activity.price == 0) {
     let imgPrice = document.createElement("span");
     imgPrice.className = "material-icons material-icons-outlined";
     imgPrice.innerHTML = "money_off";
@@ -136,20 +128,17 @@ function generateActivityHtml(
   activityPrice.append(activity.price);
   element.append(activityPrice);
 
-  
   let activityAccess = document.createElement("p");
   activityAccess.className = "activityAccess";
   activityAccess.append(activity.accessibility);
   element.append(activityAccess);
 
-  let likeButton = document.createElement('button');
-  let dislikeButton = document.createElement('button');
-  likeButton.innerHTML = 'like';
-  dislikeButton.innerHTML = 'dislike';
+  let likeButton = document.createElement("button");
+  let dislikeButton = document.createElement("button");
+  likeButton.innerHTML = "like";
+  dislikeButton.innerHTML = "dislike";
   element.append(likeButton);
   element.append(dislikeButton);
-
-
 
   parentElement.append(element);
 }
@@ -173,8 +162,8 @@ function generateNewActivity(
 
   fetch(req)
     .then((res) => res.json())
-    .then((res) => generateActivityHtml("item activity", main_el, res));
+    .then((res) => generateActivityHtml(main_el, res));
 }
-for (let i = 0; i < 15; i++) {
-  generateNewActivity();
-}
+//for (let i = 0; i < 15; i++) {
+//  generateNewActivity();
+//}
