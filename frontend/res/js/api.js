@@ -173,7 +173,7 @@ function generateNewActivity(
 
   fetch(req)
     .then((res) => res.json())
-    .then((res) => generateActivityHtml("item activity", main_el, res));
+    .then((res) => generateActivityHtml(main_el, res));
 }
 for (let i = 0; i < 15; i++) {
   generateNewActivity();
