@@ -90,6 +90,13 @@ function generateActivityHtml(
   activityAccess.append(activity.accessibility);
   element.append(activityAccess);
 
+  let likeButton = document.createElement("button");
+  let dislikeButton = document.createElement("button");
+  likeButton.innerHTML = "like";
+  dislikeButton.innerHTML = "dislike";
+  element.append(likeButton);
+  element.append(dislikeButton);
+
   parentElement.append(element);
 }
 
