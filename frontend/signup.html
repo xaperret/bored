@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign up</title>
+    <meta name="author" content="Fabien Lometti, Xavier Perret" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Original+Surfer&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="res/img/hourglass_full_black_24dp.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Original+Surfer&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="res/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="res/css/sign.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
+  <body class="wrapper">
+    <main>
+      <h1>Sign up</h1>
+      <form action="https://genwl.com" method="POST" id="usr-form">
+        <div class="item">
+          <label for="id-name">Nom</label>
+          <input required type="text" id="id-name" name="user_name" />
+        </div>
+        <div class="item">
+          <label for="id-mail">Email</label>
+          <input required type="email" id="id-mail" name="user_mail" />
+        </div>
+        <div class="item">
+          <label for="id-pwd">Mot de passe</label>
+          <input required type="password" id="id-pwd" name="user_pwd" />
+        </div>
 
-  <title>Sign up</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Original+Surfer&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="res/css/sign.css" />
-</head>
-
-<body>
-  <h1>Sign up</h1>
-
-  <form action="https://genwl.com" method="POST" id="usr-form">
-    <div>
-      <label for="id-name">Nom</label>
-      <input required type="text" id="id-name" name="user_name" />
-    </div>
-    <div>
-      <label for="id-mail">Email</label>
-      <input required type="email" id="id-mail" name="user_mail" />
-    </div>
-    <div>
-      <label for="id-pwd">Mot de passe</label>
-      <input required type="password" id="id-pwd" name="user_pwd" />
-    </div>
-
-
-    <div>
-      <button type="submit">Sign up</button>
-    </div>
-
-  </form>
-</body>
-
+        <div class="item">
+          <button type="submit">Sign up</button>
+        </div>
+      </form>
+    </main>
+    <script src="res/js/script.js"></script>
+  </body>
 </html>
