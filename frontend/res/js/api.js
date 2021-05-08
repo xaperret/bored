@@ -12,6 +12,7 @@ function createRequest(mode, information = "/") {
   let output = BORED_API;
   switch (mode) {
     case 0: // random
+      output += "";
       break;
     case 1: // key
       output += "?key=" + information[0];
@@ -113,7 +114,8 @@ function generateNewActivity(
     .then((res) => res.json())
     .then((res) => generateActivityHtml("item activity", main_el, res));
 }
-
-//for (let i = 0; i < 10; i++) {
-//  generateNewActivity();
-//}
+/* 
+for (let i = 0; i < 15; i++) {
+  generateNewActivity();
+}
+ */
