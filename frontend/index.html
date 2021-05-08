@@ -59,31 +59,31 @@
 
     <nav>
       <div class="navbarSearchCategories">
-        <button id="btnSearchInput">
+        <button id="btnSearchInput" onclick="btnHandler(this)">
           <span class="material-icons material-icons-outlined item">
             short_text
           </span>
-          <div class="btnText">key</div>
+          <div class="btnText" onclick="btnHandler(this)">key</div>
         </button>
-        <button id="btnSearchAccessibility">
+        <button id="btnSearchAccessibility" onclick="btnHandler(this)">
           <span class="material-icons material-icons-outlined">
             accessible_forward
           </span>
           <div class="btnText">accessibility</div>
         </button>
-        <button id="btnSearchPrice">
+        <button id="btnSearchPrice" onclick="btnHandler(this)">
           <span class="material-icons material-icons-outlined">
             attach_money
           </span>
           <div class="btnText">price</div>
         </button>
-        <button id="btnSearchType">
+        <button id="btnSearchType" onclick="btnHandler(this)">
           <span class="material-icons material-icons-outlined">
             format_list_bulleted
           </span>
           <div class="btnText">type</div>
         </button>
-        <button id="btnSearchParticipants">
+        <button id="btnSearchParticipants" onclick="btnHandler(this)">
           <span class="material-icons material-icons-outlined"> groups </span>
           <div class="btnText">participants</div>
         </button>
@@ -131,6 +131,7 @@
         </p>
       </details>
     </footer>
-    <script src="script.js"></script>
+    <script src="res/js/script.js"></script>
+    <script src="res/js/api.js"></script>
   </body>
 </html>
