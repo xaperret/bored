@@ -77,6 +77,12 @@
           </span>
           <div class="btnText">price</div>
         </button>
+        <button id="btnSearchPriceRange" onclick="btnHandler(this)">
+          <span class="material-icons material-icons-outlined">
+            attach_money attach_money
+          </span>
+          <div class="btnText">price range</div>
+        </button>
         <button id="btnSearchType" onclick="btnHandler(this)">
           <span class="material-icons material-icons-outlined">
             format_list_bulleted
@@ -91,14 +97,6 @@
       <div class="navbarSearch">
         <form class="item">
           <input type="text" id="searchInput" />
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-            class="slider"
-            id="rangeApi"
-          />
           <button id="btnSubmit">
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
