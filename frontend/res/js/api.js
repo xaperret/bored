@@ -150,6 +150,8 @@ function generateNewActivity(
   let req = createRequest(mode, information);
   let main_el = document.querySelector(parentElement);
 
+  console.log("Requesting -> ", req);
+  console.log("putting result in ->", main_el);
   fetch(req)
     .then((res) => res.json())
     .then((res) => generateActivityHtml(main_el, res));

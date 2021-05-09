@@ -8,6 +8,19 @@ const btnSearchBar = {
   btnSearchParticipants: 6,
 };
 
+const btn2Api = {
+  btnSearchInput: 0, // useless, 0 is random
+  btnSearchAccessibility: 6,
+  btnSearchAccessibilityRange: 7,
+  btnSearchPrice: 4,
+  btnSearchPriceRange: 5,
+  btnSearchType: 2,
+  btnSearchParticipants: 3,
+};
+
+var currentCategory = "";
+
+//searchKeyForm useless
 const navbarForms = ["searchKeyForm", "searchRangeForm", "search2RangeForm"];
 
 function formSearchHelper(elementPos) {
@@ -70,6 +83,7 @@ function formSearchHandler(btnElement) {
 }
 
 function btnHandler(btnElement) {
+  currentCategory = btnElement;
   console.log("btnHandler working btn pressed -> ", btnElement.id);
   if (btnSearchBar[btnElement.id] != undefined) {
     console.log("Calling formSearchHandler");
@@ -83,14 +97,18 @@ function btnHandler(btnElement) {
  * @param {*} btnElement
  * @returns
  */
-function getValueOfRanges(btnElement) {
-  let parentElementId = btnElement.parentElement.id;
-  let ranges = parentElementId.getElementsByClassName("range");
-  let res = [];
+function createActivityFromSearch(btnElement) {
+  let parentElement = btnElement.parentElement;
+  let ranges = parentElement.getElementsByClassName("range");
+  let valuesRange = [];
 
   for (let i = 0; i < ranges.length; i++) {
-    res.push(ranges[i].value);
+    valuesRange.push(ranges[i].value);
   }
+  console.log("Search category is ->", currentCategory);
+  let mode = btn2Api[currentCategory.id];
 
-  return res;
+  console.log("Generating new activity with mode -> ", mode);
+  console.log("Values given are -> ", valuesRange);
+  generateNewActivity(mode, valuesRange);
 }
