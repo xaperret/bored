@@ -182,7 +182,6 @@ nav button {
   box-shadow      : var(--color-dark-text) 0 2px;
 }
 
-
 nav .container {
   flex-flow      : column wrap;
   align-self     : flex-start;
@@ -200,17 +199,18 @@ nav .navbarSearchCategories {
 }
 
 nav .navbarSearchCategories button {
-  flex-grow    : 1;
-  display      : flex;
-  flex-flow    : row nowrap;
-  align-items  : center;
-  padding      : 0.25em;
-  min-height   : 3em;
-  min-width    : 3em;
-  border-radius: 8px;
-  margin       : 0.25em;
-  font-family  : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
-  align-self   : center;
+  flex-grow      : 1;
+  display        : flex;
+  flex-flow      : row nowrap;
+  align-items    : center;
+  justify-content: center;
+  align-self     : center;
+  padding        : 0.25em;
+  min-height     : 3em;
+  min-width      : 3em;
+  border-radius  : 8px;
+  margin         : 0.25em;
+  font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
 }
 
 nav .searchButton:hover {
@@ -370,18 +370,38 @@ a {
 
 /* TABLETS */
 @media screen and (max-width: 768px) {
+  /* ! HEADER ! */
+
+  /* ! NAV ! */
   #btnSubmit .btnText {
     display: none;
   }
+
+  .btnText {
+    display: none;
+  }
+
+  .material-icons {
+    align-self: center;
+  }
+
+  /* ! MAIN ! */
+
+  /* ! FOOTER ! */
+
+  /* ! MISC ! */
+
 }
 
 /* MOBILE PHONE */
 @media screen and (max-width: 480px) {
+
+  /* ! GENERAL ! */
   .item {
     flex-grow: 4;
   }
 
-  /* HEADER */
+  /* ! HEADER ! */
   header {
     margin : 0;
     padding: 0;
