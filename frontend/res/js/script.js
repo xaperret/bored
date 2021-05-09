@@ -76,3 +76,20 @@ function btnHandler(btnElement) {
     formSearchHandler(btnElement);
   }
 }
+
+/**
+ * Return the values of ranges found in parent element of given button
+ * @param {*} btnElement
+ * @returns
+ */
+function getValueOfRanges(btnElement) {
+  let parentElementId = btnElement.parentElement.id;
+  let ranges = f.getElementsByClassName(parentElementId);
+  let res = [];
+
+  for (let i = 0; i < ranges.length; i++) {
+    res.push(ranges[i].value);
+  }
+
+  return res;
+}
