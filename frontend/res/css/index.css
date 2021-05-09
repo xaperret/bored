@@ -399,7 +399,7 @@ a {
     flex-wrap: wrap;
   }
 
-  #btnSubmit .btnText {
+  .btnSubmit .btnText {
     display: none;
   }
 

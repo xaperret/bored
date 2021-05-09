@@ -26,7 +26,7 @@ function createRequest(mode, information = "/") {
       output += "?price=" + information[0];
       break;
     case 5: // price range
-      output += "minprice=" + information[0] + "&maxprice=" + information[1];
+      output += "?minprice=" + information[0] + "&maxprice=" + information[1];
       break;
     case 6: // accessibility
       output += "?accessibility=" + information[0];

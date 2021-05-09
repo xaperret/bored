@@ -96,16 +96,24 @@
       </div>
       <div class="navbarSearch">
         <form class="item" id="searchRangeForm" onsubmit="alert('pat');">
-          <input type="range" class="range" />
-          <button id="btnSubmit" type="button" onclick="">
+          <input min="0.0" max="1.0" step="0.1" type="range" class="range" />
+          <button
+            class="btnSubmit"
+            type="button"
+            onclick="createActivityFromSearch(this)"
+          >
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
           </button>
         </form>
         <form class="item" id="search2RangeForm">
-          <input type="range" class="range" />
-          <input type="range" class="range" />
-          <button id="btnSubmit" type="button" onclick="">
+          <input min="0.0" max="1.0" step="0.1" type="range" class="range" />
+          <input min="0.0" max="1.0" step="0.1" type="range" class="range" />
+          <button
+            class="btnSubmit"
+            type="button"
+            onclick="createActivityFromSearch(this)"
+          >
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
           </button>
@@ -123,6 +131,13 @@
             <option value="recreational">Recreational</option>
             <option value="relaxation">Relaxation</option>
           </select>
+          <button
+            class="btnSubmit"
+            type="button"
+            onclick="createActivityFromSearch(this)"
+          >
+            test
+          </button>
         </form>
       </div>
     </nav>
