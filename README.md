@@ -4,9 +4,14 @@
 Un site qui permet de rechercher des activités lorsque l'on a du temps et subséquemment de les noter et commenter.
 
 ### Le service offert
-Le site est un recueil d'activités à faire lorsque l'on a du temps libre et dispose d'un certain nombre de fonctionnalités :
+Le site permet d'obtenir une activité à effectuer à l'aide de l'api bored. Il sera un recueil d'activités à faire lorsque l'on a du temps libre et dispose d'un certain nombre de fonctionnalités :
 - Rechercher une activité à effectuer (à l'aide de l'API [bored](https://www.boredapi.com/))
-  - Filter par prix, nombre de personne, difficulté 
+  - aléatoire
+  - par prix
+  - par nombre de personne
+  - par accessibilité
+  - par type
+Pour le moment indisponible :
 - Noter l'activité choisie
 - Commenter une activité
 - Enregistrer le choix d'une activité choisie par l'utilisateur
@@ -28,7 +33,11 @@ Le projet contient deux dossiers:
 - **frontend**: Contient le site public
   - res
     - css
-    - script
+    - font
+    - img
+    - js
+        - api => fonction relatif aux appels de l'api externes
+        - script => fonction relatif à l'aspect frontend divers et varié
 - **backend**: Contient le serveur Node
 
 ### Démarrer le serveur
@@ -70,7 +79,7 @@ Pour stopper le serveur Node, utilisez la commande **CTRL + C**
     +-------------+    +-------------+
     |     API     |    |     API     |
     +-------------+    +-------------+
-    |             |    |             |
+    |  (pas dispo)|    |             |
     |   Backend   |    |    bored    |
     |   NODE.JS   |    |  API public |
     |             |    |             |
@@ -84,7 +93,12 @@ Pour stopper le serveur Node, utilisez la commande **CTRL + C**
 Voici la liste des fonctionnalités de l'Application Web:
 
 - Rechercher une activité à effectuer (à l'aide de l'API [bored](https://www.boredapi.com/))
-  - Filter par prix, nombre de personne, difficulté 
+  - aléatoire
+  - par prix
+  - par nombre de personne
+  - par accessibilité
+  - par type
+Pour le moment indisponible :
 - Noter l'activité choisie
 - Commenter une activité
 - Enregistrer le choix d'une activité choisie par l'utilisateur
