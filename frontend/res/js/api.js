@@ -157,6 +157,6 @@ function generateNewActivity(
     .then((res) => generateActivityHtml(main_el, res));
 }
 
-//for (let i = 0; i < 15; i++) {
-//  generateNewActivity();
-//}
+// for (let i = 0; i < 15; i++) {
+//   generateNewActivity();
+// }

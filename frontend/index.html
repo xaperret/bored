@@ -1,216 +1,167 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <title>ihavetime</title>
-    <meta name="author" content="Fabien Lometti, Xavier Perret" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="res/css/index.css" />
-    <link rel="icon" href="res/img/hourglass_full_black_24dp.svg" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Original+Surfer&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body class="wrapper">
-    <header>
-      <a href="index.html" class="item">
-        <img
-          src="res/img/fleurette.png"
-          alt="Art contemporain d'une fleur, logo du site"
-          id="logo"
-      /></a>
-      <a href="index.html" class="item" id="home">ihavetime</a>
-      <div class="item emptySpace"></div>
-      <div class="item">
-        <a href="./signup.html" class="item">signup</a>
-        <a href="./signin.html" class="item">signin</a>
-      </div>
-      <div class="fullMenuAside item">
-        <span
-          class="material-icons material-icons-outlined"
-          id="menuButtonHeader"
-          >menu</span
-        >
-        <div class="menuAside">
-          <h1 class="item">quick access activities</h1>
-          <a href="best.html" class="item"> -> the best of the best</a>
-          <a href="favorite.html" class="item"> -> the favorites</a>
-          <a href="random.html" class="item"> -> and i've got luck</a>
-          <a href="myfavorite.html" class="item personnalSection">
-            => my favs</a
-          >
-          <a href="mypastactivities.html" class="item personnalSection">
-            => my pasts activities</a
-          >
-        </div>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <title>ihavetime</title>
+  <meta name="author" content="Fabien Lometti, Xavier Perret" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="res/css/index.css" />
+  <link rel="icon" href="res/img/hourglass_full_black_24dp.svg" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Original+Surfer&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
 
-    <nav>
-      <div class="navbarSearchCategories">
-        <button id="btnSearchAccessibility" onclick="btnHandler(this)">
-          <span class="material-icons material-icons-outlined">
-            accessible_forward
-          </span>
-          <div class="btnText">accessibility</div>
-        </button>
-        <button id="btnSearchAccessibilityRange" onclick="btnHandler(this)">
-          <span class="material-icons material-icons-outlined">
-            accessible_forward arrow_right_alt accessible_forward
-          </span>
-          <div class="btnText">accessibility</div>
-        </button>
-        <button id="btnSearchPrice" onclick="btnHandler(this)">
-          <span class="material-icons material-icons-outlined">
-            attach_money
-          </span>
-          <div class="btnText">price</div>
-        </button>
-        <button id="btnSearchPriceRange" onclick="btnHandler(this)">
-          <span class="material-icons material-icons-outlined">
-            attach_money arrow_right_alt attach_money
-          </span>
-          <div class="btnText">price range</div>
-        </button>
-        <button id="btnSearchType" onclick="btnHandler(this)">
-          <span class="material-icons material-icons-outlined">
-            format_list_bulleted
-          </span>
-          <div class="btnText">type</div>
-        </button>
-        <button id="btnSearchParticipants" onclick="btnHandler(this)">
-          <span class="material-icons material-icons-outlined"> groups </span>
-          <div class="btnText">participants</div>
-        </button>
-      </div>
-      <div class="navbarSearch">
-        <form class="item" id="searchRangeForm" onsubmit="alert('pat');">
-          <label for="srange"></label>
-          <input
-            min="0.0"
-            max="1.0"
-            step="0.1"
-            type="range"
-            name="srange"
-            id="srange"
-            class="range"
-          />
-          <button
-            class="btnSubmit"
-            type="button"
-            onclick="createActivityFromSearch(this)"
-          >
-            <span class="material-icons" id="menuButtonHeader"> search </span>
-            <div class="btnText">search</div>
-          </button>
-        </form>
-        <form class="item" id="search2RangeForm">
-          <label for="s2range">minimum</label>
-          <input
-            min="0.0"
-            max="1.0"
-            step="0.1"
-            type="range"
-            class="range"
-            id="s2range"
-            name="s2range"
-            list="tickmarks"
-          />
-          <datalist id="tickmarks">
-            <option value="0" label="0%"></option>
-            <option value="10"></option>
-            <option value="20"></option>
-            <option value="30"></option>
-            <option value="40"></option>
-            <option value="50" label="50%"></option>
-            <option value="60"></option>
-            <option value="70"></option>
-            <option value="80"></option>
-            <option value="90"></option>
-            <option value="100" label="100%"></option>
-          </datalist>
-          <label for="s1range">maximum</label>
-          <input
-            min="0.0"
-            max="1.0"
-            step="0.1"
-            type="range"
-            class="range"
-            id="s1range"
-            name="s1range"
-            list="tickmarks"
-          />
-          <button
-            class="btnSubmit"
-            type="button"
-            onclick="createActivityFromSearch(this)"
-          >
-            <span class="material-icons" id="menuButtonHeader"> search </span>
-            <div class="btnText">search</div>
-          </button>
-        </form>
-        <form class="item" id="searchTypeForm">
-          <label for="activityType">Choose a type</label>
-          <select id="activityType" name="activityType" size="1">
-            <option value="charity">Charity</option>
-            <option value="cooking">Cooking</option>
-            <option value="music">Music</option>
-            <option value="diy">Diy</option>
-            <option value="education">Education</option>
-            <option value="social">Social</option>
-            <option value="busywork">Busywork</option>
-            <option value="recreational">Recreational</option>
-            <option value="relaxation">Relaxation</option>
-          </select>
-          <button
-            class="btnSubmit"
-            type="button"
-            onclick="createActivityFromSearch(this)"
-          >
-            test
-          </button>
-        </form>
-      </div>
-    </nav>
-
-    <div class="containerAsideMain">
-      <aside>
+<body class="wrapper">
+  <header>
+    <a href="index.html" class="item">
+      <img src="res/img/fleurette.png" alt="Art contemporain d'une fleur, logo du site" id="logo" /></a>
+    <a href="index.html" class="item" id="home">ihavetime</a>
+    <div class="item emptySpace"></div>
+    <div class="item">
+      <a href="./signup.html" class="item">signup</a>
+      <a href="./signin.html" class="item">signin</a>
+    </div>
+    <div class="fullMenuAside item">
+      <span class="material-icons material-icons-outlined" id="menuButtonHeader">menu</span>
+      <div class="menuAside">
         <h1 class="item">quick access activities</h1>
         <a href="best.html" class="item"> -> the best of the best</a>
         <a href="favorite.html" class="item"> -> the favorites</a>
         <a href="random.html" class="item"> -> and i've got luck</a>
-        <a href="myfavorite.html" class="item personnalSection"> => my favs</a>
+        <a href="myfavorite.html" class="item personnalSection">
+          => my favs</a>
         <a href="mypastactivities.html" class="item personnalSection">
-          => my pasts activities</a
-        >
-      </aside>
-
-      <main></main>
+          => my pasts activities</a>
+      </div>
     </div>
+  </header>
 
-    <footer>
-      <details>
-        <summary>A propos</summary>
-        <p>
-          Site pour trouver des activités à effectuer pendant son temps libre.
-          <br />Créer par Xavier Perret et Fabien Lometti dans le cadre du cours
-          d'Architecture Web de l'HEPIA. <br />HES-SO Mai 2021.
-        </p>
-      </details>
-    </footer>
+  <nav>
+    <div class="navbarSearchCategories">
+      <button id="btnSearchAccessibility" onclick="btnHandler(this)">
+        <span class="material-icons material-icons-outlined">
+          accessible_forward
+        </span>
+        <div class="btnText">accessibility</div>
+      </button>
+      <button id="btnSearchAccessibilityRange" onclick="btnHandler(this)">
+        <span class="material-icons material-icons-outlined">
+          accessible_forward arrow_right_alt accessible_forward
+        </span>
+        <div class="btnText">accessibility</div>
+      </button>
+      <button id="btnSearchPrice" onclick="btnHandler(this)">
+        <span class="material-icons material-icons-outlined">
+          attach_money
+        </span>
+        <div class="btnText">price</div>
+      </button>
+      <button id="btnSearchPriceRange" onclick="btnHandler(this)">
+        <span class="material-icons material-icons-outlined">
+          attach_money arrow_right_alt attach_money
+        </span>
+        <div class="btnText">price range</div>
+      </button>
+      <button id="btnSearchType" onclick="btnHandler(this)">
+        <span class="material-icons material-icons-outlined">
+          format_list_bulleted
+        </span>
+        <div class="btnText">type</div>
+      </button>
+      <button id="btnSearchParticipants" onclick="btnHandler(this)">
+        <span class="material-icons material-icons-outlined"> groups </span>
+        <div class="btnText">participants</div>
+      </button>
+    </div>
+    <div class="navbarSearch">
+      <form class="item" id="searchRangeForm">
+        <label for="srange"></label>
+        <input min="0.0" max="1.0" step="0.1" type="range" name="srange" id="srange" class="range" />
+        <button class="btnSubmit" type="button" onclick="createActivityFromSearch(this)">
+          <span class="material-icons" id="menuButtonHeader"> search </span>
+          <div class="btnText">search</div>
+        </button>
+        <button onclick="clearActivities()"> <span class="material-icons" id="menuButtonHeader"> delete </span>
+          <div class="btnText">delete</div>
+        </button>
+      </form>
+      <form class="item" id="search2RangeForm">
+        <label for="s2range">minimum</label>
+        <input min="0.0" max="1.0" step="0.1" type="range" class="range" id="s2range" name="s2range" list="tickmarks" />
+        <datalist id="tickmarks">
+          <option value="0" label="0%"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50" label="50%"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100" label="100%"></option>
+        </datalist>
+        <label for="s1range">maximum</label>
+        <input min="0.0" max="1.0" step="0.1" type="range" class="range" id="s1range" name="s1range" list="tickmarks" />
+        <button class="btnSubmit" type="button" onclick="createActivityFromSearch(this)">
+          <span class="material-icons" id="menuButtonHeader"> search </span>
+          <div class="btnText">search</div>
+        </button>
+      </form>
+      <form class="item" id="searchTypeForm">
+        <label for="activityType">Choose a type</label>
+        <select id="activityType" name="activityType" size="1">
+          <option value="charity">Charity</option>
+          <option value="cooking">Cooking</option>
+          <option value="music">Music</option>
+          <option value="diy">Diy</option>
+          <option value="education">Education</option>
+          <option value="social">Social</option>
+          <option value="busywork">Busywork</option>
+          <option value="recreational">Recreational</option>
+          <option value="relaxation">Relaxation</option>
+        </select>
+        <button class="btnSubmit" type="button" onclick="createActivityFromSearch(this)">
+          test
+        </button>
+      </form>
+    </div>
+  </nav>
 
-    <script src="res/js/script.js"></script>
-    <script src="res/js/api.js"></script>
-  </body>
+  <div class="containerAsideMain">
+    <aside>
+      <h1 class="item">quick access activities</h1>
+      <a href="best.html" class="item"> -> the best of the best</a>
+      <a href="favorite.html" class="item"> -> the favorites</a>
+      <a href="random.html" class="item"> -> and i've got luck</a>
+      <a href="myfavorite.html" class="item personnalSection"> => my favs</a>
+      <a href="mypastactivities.html" class="item personnalSection">
+        => my pasts activities</a>
+    </aside>
+
+    <main>
+
+    </main>
+  </div>
+
+  <footer>
+    <details>
+      <summary>A propos</summary>
+      <p>
+        Site pour trouver des activités à effectuer pendant son temps libre.
+        <br />Créer par Xavier Perret et Fabien Lometti dans le cadre du cours
+        d'Architecture Web de l'HEPIA. <br />HES-SO Mai 2021.
+      </p>
+    </details>
+  </footer>
+
+  <script src="res/js/script.js"></script>
+  <script src="res/js/api.js"></script>
+</body>
+
 </html>
