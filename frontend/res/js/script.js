@@ -21,18 +21,19 @@ const btn2Api = {
 var currentCategory = "";
 
 //searchKeyForm useless
-const navbarForms = ["searchKeyForm", "searchRangeForm", "search2RangeForm"];
+const navbarForms = [
+  "searchNumber",
+  "searchRangeForm",
+  "search2RangeForm",
+  "searchTypeForm",
+];
 
 function formSearchHelper(elementPos) {
   for (let i = 0; i < navbarForms.length; i++) {
     if (i != elementPos) {
       try {
         let element2Hide = document.getElementById(navbarForms[i]);
-        console.log("this", document.getElementById(navbarForms[i]));
-        element2Hide[0].style.display = "none";
-        for (let i = 0; i < element2Hide.length; i++) {
-          element2Hide[i].style.display = "none";
-        }
+        element2Hide.style.display = "none";
       } catch (e) {
         console.log(e);
       }
@@ -41,7 +42,6 @@ function formSearchHelper(elementPos) {
   let element2Open = document.getElementById(navbarForms[elementPos]);
   for (let i = 0; i < element2Open.length; i++) {
     element2Open.style.display = "flex";
-    element2Open[i].style.display = "flex";
   }
 }
 
@@ -70,8 +70,8 @@ function formSearchHandler(btnElement) {
     case 4: // btnSearchPriceR -> 2 range
       formSearchHelper(2);
       break;
-    case 5: // TODO btnSearchType -> List TODO
-      formSearchHelper(2);
+    case 5: // btnSearchType -> List
+      formSearchHelper(3);
       break;
     case 6: // btnSearchParticipants -> 1 range
       formSearchHelper(1);
@@ -111,4 +111,19 @@ function createActivityFromSearch(btnElement) {
   console.log("Generating new activity with mode -> ", mode);
   console.log("Values given are -> ", valuesRange);
   generateNewActivity(mode, valuesRange);
+}
+
+function createActivityFromSearchType(btnElement) {
+  let parentElement = btnElement.parentElement;
+  let type = document.getElementById("activityType");
+
+  let valuesType = [];
+  valuesType.push(type.value);
+
+  console.log("Search category is ->", currentCategory);
+  let mode = btn2Api[currentCategory.id];
+
+  console.log("Generating new activity with mode -> ", mode);
+  console.log("Values given are -> ", valuesType);
+  generateNewActivity(mode, valuesType);
 }

@@ -275,6 +275,10 @@ nav .navbarSearch form input {
   display: none;
 }
 
+#searchNumber {
+  display: none;
+}
+
 /* 
 nav .container form button {}
 */

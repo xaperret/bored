@@ -95,8 +95,12 @@
         </button>
       </div>
       <div class="navbarSearch">
-        <form class="item" id="searchRangeForm" onsubmit="alert('pat');">
-          <label for="srange"></label>
+        <form class="item" id="searchNumber">
+          <label for="quantity">amount (min 1)</label>
+          <input type="number" id="quantity" name="quantity" min="1" />
+        </form>
+        <form class="item" id="searchRangeForm">
+          <label for="srange">amount</label>
           <input
             min="0.0"
             max="1.0"
@@ -176,9 +180,9 @@
           <button
             class="btnSubmit"
             type="button"
-            onclick="createActivityFromSearch(this)"
+            onclick="createActivityFromSearchType(this)"
           >
-            test
+            Search
           </button>
         </form>
       </div>
