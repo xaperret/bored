@@ -54,6 +54,11 @@ function createRequest(mode, information = "/") {
  * @return {} return the element that has been newly created
  */
 function generateActivityHtml(parentElement, activity) {
+  if (activity.activity == undefined) {
+    console.log("wrong request");
+    return;
+  }
+
   let element = document.createElement("div");
   element.className = "activity";
 
@@ -120,7 +125,7 @@ function generateActivityHtml(parentElement, activity) {
 
   let activityAccess = document.createElement("p");
   activityAccess.className = "activityAccess";
-  activityAccess.append("accessibility[0.0,1.0] : " + activity.accessibility);
+  activityAccess.append("accessibility : " + activity.accessibility * 10);
   element.append(activityAccess);
 
   let likeButton = document.createElement("button");
@@ -167,13 +172,8 @@ function generateNewActivity(
     .catch((error) => {
       console.log("fetch error" + error);
     });
-  /*
-  fetch(req)
-    .then((res) => res.json())
-    .then((res) => generateActivityHtml(main_el, res));
-    */
 }
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 3; i++) {
   generateNewActivity();
 }

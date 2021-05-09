@@ -1,3 +1,4 @@
+// To do the right action with formSearch/formSearchHelper
 const btnSearchBar = {
   btnSearchInput: 0,
   btnSearchAccessibility: 1,
@@ -8,6 +9,7 @@ const btnSearchBar = {
   btnSearchParticipants: 6,
 };
 
+// Represents the different option to use the right mode depending on the request by the user
 const btn2Api = {
   btnSearchInput: 0, // useless, 0 is random
   btnSearchAccessibility: 6,
@@ -20,7 +22,7 @@ const btn2Api = {
 
 var currentCategory = "";
 
-//searchKeyForm useless
+// The id of the different form contained in the navbar
 const navbarForms = [
   "searchNumber",
   "searchRangeForm",
@@ -28,6 +30,10 @@ const navbarForms = [
   "searchTypeForm",
 ];
 
+/**
+ * Hide form that are not needed and display the form requested by the user
+ * @param {*} elementPos
+ */
 function formSearchHelper(elementPos) {
   for (let i = 0; i < navbarForms.length; i++) {
     if (i != elementPos) {
@@ -74,7 +80,7 @@ function formSearchHandler(btnElement) {
       formSearchHelper(3);
       break;
     case 6: // btnSearchParticipants -> 1 range
-      formSearchHelper(1);
+      formSearchHelper(0);
       break;
     default:
       formSearchHelper(0);
@@ -82,11 +88,18 @@ function formSearchHandler(btnElement) {
   }
 }
 
+/**
+ * Delete all activities found in main
+ */
 function clearActivities() {
   var main = document.querySelector("main");
   main.removeChild(main.children);
 }
 
+/**
+ * Help call the right function using global 'dictionary' btnSearchBar
+ * @param {*} btnElement
+ */
 function btnHandler(btnElement) {
   currentCategory = btnElement;
   console.log("btnHandler working btn pressed -> ", btnElement.id);
@@ -98,7 +111,23 @@ function btnHandler(btnElement) {
 }
 
 /**
- * Return the values of ranges found in parent element of given button
+ * Create activity using values found in quantity id input tag
+ */
+function createActivityFromSearchNumber() {
+  let num = document.getElementById("quantity");
+  let values = [];
+
+  values.push(num.value);
+  console.log("Search category is ->", currentCategory);
+  let mode = btn2Api[currentCategory.id];
+
+  console.log("Generating new activity with mode -> ", mode);
+  console.log("Values given are -> ", values);
+  generateNewActivity(mode, values);
+}
+
+/**
+ * Create activity using values found in parent form
  * @param {*} btnElement
  * @returns
  */
@@ -118,8 +147,11 @@ function createActivityFromSearch(btnElement) {
   generateNewActivity(mode, valuesRange);
 }
 
+/**
+ * Create activity element and add to main by retrieving value from activity type
+ * @param {*} btnElement
+ */
 function createActivityFromSearchType(btnElement) {
-  let parentElement = btnElement.parentElement;
   let type = document.getElementById("activityType");
 
   let valuesType = [];
