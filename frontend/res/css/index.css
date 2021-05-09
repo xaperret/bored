@@ -366,16 +366,32 @@ a {
 /* Extra large screens, TV */
 @media screen and (min-width: 1201px) {}
 
-/*
-769 -> 1024px => small screens, laptop
-1025 -> 1200px => desktops
-*/
+/* INTERMEDIATE */
+@media screen and (max-width: 900px) {
+  /* ! HEADER ! */
+
+  /* ! NAV ! */
+  .btnText {
+    display: none;
+  }
+
+  /* ! MAIN ! */
+
+  /* ! FOOTER ! */
+
+  /* ! MISC ! */
+
+}
 
 /* TABLETS */
 @media screen and (max-width: 768px) {
   /* ! HEADER ! */
 
   /* ! NAV ! */
+  nav .navbarSearchCategories {
+    flex-wrap: wrap;
+  }
+
   #btnSubmit .btnText {
     display: none;
   }
@@ -447,7 +463,11 @@ a {
     display: none;
   }
 
-  /* NAV */
+  /* ! NAV ! */
+  nav .navbarSearchCategories {
+    flex-wrap: wrap;
+  }
+
   input[type="text"],
   select {
     /* to reduce input text bar */
@@ -455,7 +475,7 @@ a {
     box-sizing: border-box;
   }
 
-  /* MAIN */
+  /* ! MAIN ! */
   main {
     padding: 0.25em;
     margin : 0.25em;
@@ -465,9 +485,9 @@ a {
     display: none;
   }
 
-  /* FOOTER */
+  /* ! FOOTER ! */
 
-  /* CLASSES */
+  /* ! CLASSES ! */
   .btnText {
     display: none;
   }
