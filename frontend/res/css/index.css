@@ -47,10 +47,13 @@ html {
   background-color: var(--color-dark-background);
 }
 
-.formContainer {
-  /* most containers */
-  display: flex;
+/* frontend : not using link for the moment */
+aside a {
+  pointer-events: none;
+}
 
+.formContainer {
+  display: flex;
   justify-content: space-evenly;
   align-content  : flex-start;
   align-items    : flex-start;
