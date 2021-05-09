@@ -130,7 +130,7 @@ function generateActivityHtml(parentElement, activity) {
   element.append(likeButton);
   element.append(dislikeButton);
 
-  parentElement.append(element);
+  parentElement.prepend(element);
 }
 
 /**
