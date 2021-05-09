@@ -41,6 +41,7 @@ function formSearchHandler(btnElement) {
   switch (btnSearchBar[btnElement.id]) {
     case 0: // btnSearchInput -> text input
       console.log("btnSearchInput -> text input");
+      //generateNewActivity(1,);
       formSearchHelper(0);
       break;
     case 1: // btnSearchAccess -> 1 range
