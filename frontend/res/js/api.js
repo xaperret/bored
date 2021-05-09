@@ -148,15 +148,32 @@ function generateNewActivity(
   parentElement = "main"
 ) {
   let req = createRequest(mode, information);
-  let main_el = document.querySelector(parentElement);
+  let mainElement = document.querySelector(parentElement);
 
   console.log("Requesting -> ", req);
-  console.log("putting result in ->", main_el);
+  console.log("putting result in ->", mainElement);
+
+  fetch(req)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong");
+      }
+    })
+    .then((responseJson) => {
+      generateActivityHtml(mainElement, responseJson);
+    })
+    .catch((error) => {
+      console.log("fetch error" + error);
+    });
+  /*
   fetch(req)
     .then((res) => res.json())
     .then((res) => generateActivityHtml(main_el, res));
+    */
 }
 
-// for (let i = 0; i < 15; i++) {
-//   generateNewActivity();
-// }
+for (let i = 0; i < 15; i++) {
+  generateNewActivity();
+}
