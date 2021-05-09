@@ -59,12 +59,6 @@
 
     <nav>
       <div class="navbarSearchCategories">
-        <button id="btnSearchInput" onclick="btnHandler(this)">
-          <span class="material-icons material-icons-outlined item">
-            short_text
-          </span>
-          <div class="btnText">key</div>
-        </button>
         <button id="btnSearchAccessibility" onclick="btnHandler(this)">
           <span class="material-icons material-icons-outlined">
             accessible_forward
@@ -101,27 +95,33 @@
         </button>
       </div>
       <div class="navbarSearch">
-        <form class="item" id="searchKeyForm">
-          <input type="text" id="searchInput" />
-          <button id="btnSubmit">
-            <span class="material-icons" id="menuButtonHeader"> search </span>
-            <div class="btnText">search</div>
-          </button>
-        </form>
-        <form class="item" id="searchRangeForm">
-          <input type="range" id="searchRange" />
-          <button id="btnSubmit">
+        <form class="item" id="searchRangeForm" onsubmit="alert('pat');">
+          <input type="range" class="range" />
+          <button id="btnSubmit" type="button" onclick="">
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
           </button>
         </form>
         <form class="item" id="search2RangeForm">
-          <input type="range" id="searchRangeMin" />
-          <input type="range" id="searchRangeMax" />
-          <button id="btnSubmit">
+          <input type="range" class="range" />
+          <input type="range" class="range" />
+          <button id="btnSubmit" type="button" onclick="">
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
           </button>
+        </form>
+        <form class="item" id="searchTypeForm">
+          <label for="activityType">Choose a type</label>
+          <select id="activityType" name="activityType" size="1">
+            <option value="charity">Charity</option>
+            <option value="cooking">Cooking</option>
+            <option value="music">Music</option>
+            <option value="diy">Diy</option>
+            <option value="education">Education</option>
+            <option value="social">Social</option>
+            <option value="busywork">Busywork</option>
+            <option value="recreational">Recreational</option>
+            <option value="relaxation">Relaxation</option>
         </form>
       </div>
     </nav>
@@ -137,7 +137,6 @@
           => my pasts activities</a
         >
       </aside>
-
       <main></main>
     </div>
     <footer>
