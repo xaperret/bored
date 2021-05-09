@@ -227,7 +227,6 @@ nav .navbarSearch {
 
 nav .navbarSearch form {
   flex-grow      : 1;
-  display        : flex;
   align-content  : center;
   align-items    : center;
   justify-content: flex-start;
@@ -255,6 +254,10 @@ nav .navbarSearch form input {
 
 #rangeApi {
   display: none;
+}
+
+#searchKeyForm {
+  display: flex;
 }
 
 #searchRangeForm {
