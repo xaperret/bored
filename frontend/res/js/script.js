@@ -82,6 +82,11 @@ function formSearchHandler(btnElement) {
   }
 }
 
+function clearActivities() {
+  var main = document.querySelector("main");
+  main.removeChild(main.children);
+}
+
 function btnHandler(btnElement) {
   currentCategory = btnElement;
   console.log("btnHandler working btn pressed -> ", btnElement.id);

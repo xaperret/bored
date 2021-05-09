@@ -21,7 +21,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body class="wrapper">
     <header>
       <a href="index.html" class="item">
@@ -118,6 +117,10 @@
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
           </button>
+          <button onclick="clearActivities()">
+            <span class="material-icons" id="menuButtonHeader"> delete </span>
+            <div class="btnText">delete</div>
+          </button>
         </form>
         <form class="item" id="search2RangeForm">
           <label for="s2range">minimum</label>
@@ -163,6 +166,10 @@
             <span class="material-icons" id="menuButtonHeader"> search </span>
             <div class="btnText">search</div>
           </button>
+          <button onclick="clearActivities()">
+            <span class="material-icons" id="menuButtonHeader"> delete </span>
+            <div class="btnText">delete</div>
+          </button>
         </form>
         <form class="item" id="searchTypeForm">
           <label for="activityType">Choose a type</label>
@@ -183,6 +190,10 @@
             onclick="createActivityFromSearchType(this)"
           >
             Search
+          </button>
+          <button onclick="clearActivities()">
+            <span class="material-icons" id="menuButtonHeader"> delete </span>
+            <div class="btnText">delete</div>
           </button>
         </form>
       </div>
