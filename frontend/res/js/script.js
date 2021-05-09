@@ -84,7 +84,7 @@ function btnHandler(btnElement) {
  */
 function getValueOfRanges(btnElement) {
   let parentElementId = btnElement.parentElement.id;
-  let ranges = f.getElementsByClassName(parentElementId);
+  let ranges = parentElementId.getElementsByClassName("range");
   let res = [];
 
   for (let i = 0; i < ranges.length; i++) {
