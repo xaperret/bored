@@ -1,0 +1,130 @@
+/* COMMON */
+:root {
+  --color-dark-background  : #252422;
+  --color-highlight        : #ec7b10;
+  --color-light-background : #e66916;
+  --color-light-text       : #fffcf2;
+  --color-dark-text        : #403d39;
+  --color-radial-background: #bda53c;
+}
+
+main {
+  display        : flex;
+  flex-flow      : column wrap;
+  justify-content: center;
+  align-items    : center;
+  align-content  : center;
+}
+
+main form {
+  display        : flex;
+  flex-flow      : column wrap;
+  justify-content: center;
+  align-items    : stretch;
+  align-content  : center;
+  min-width      : 100%;
+}
+
+main .item {
+  display         : flex;
+  margin          : 1em;
+  padding         : 1em;
+  flex-flow       : row wrap;
+  border-radius   : 4px;
+  background-color: var(--color-highlight);
+}
+
+
+main .item label {
+  color: var(--color-dark-text);
+
+  font-size  : 1.5em;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+}
+
+main h1 {
+  margin     : 1em;
+  font-size  : 5em;
+  color      : var(--color-highlight);
+  font-family: "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
+}
+
+input {
+  font-size    : 2em;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input,
+select {
+  /* to reduce input text bar */
+  width     : 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border: 3px solid var(--color-light-text);
+}
+
+html {
+  background-color: var(--color-dark-background);
+}
+
+body {
+  min-height   : 100vh;
+  /* background: radial-gradient(var(--color-radial-background), var(--color-light-background)); */
+}
+
+label,
+input {
+  margin: 0.25em;
+}
+
+button:active {
+  background-color: var(--color-light-background);
+  transform       : translateY(4px);
+}
+
+button {
+  margin-right    : 0.25em;
+  padding         : 0.25em 0.25em;
+  min-width       : 100%;
+  font-size       : 2em;
+  cursor          : pointer;
+  text-align      : center;
+  text-decoration : none;
+  outline         : none;
+  color           : var(--color-dark-text);
+  background-color: var(--color-light-text);
+  border          : var(--color-border);
+  border-radius   : 8px;
+  box-shadow      : var(--color-dark-text) 0 2px;
+}
+
+/* Extra large screens, TV */
+@media screen and (min-width: 1201px) {}
+
+/*
+769 -> 1024px => small screens, laptop
+1025 -> 1200px => desktops
+*/
+
+/* TABLETS */
+@media screen and (max-width: 768px) {}
+
+/* MOBILE PHONE */
+@media screen and (max-width: 480px) {
+  main h1 {
+    font-size: 2em;
+    margin   : 0.25em;
+  }
+
+  input {
+    font-size    : 1.5em;
+    border-radius: 5px;
+  }
+}

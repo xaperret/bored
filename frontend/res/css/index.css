@@ -1,0 +1,507 @@
+/* IMPORTS */
+/*
+ *@font-face {
+  font-family: Interstellar;
+  src: url("../font/001\ Interstellar\ Log\ Regular.ttf");
+}
+*/
+
+/* COMMON */
+* {
+  margin: 0;
+}
+
+:root {
+  --color-dark-background : #252422;
+  --color-highlight       : #ec7b10;
+  --color-light-background: #e66916;
+  --color-light-text      : #fffcf2;
+  --color-dark-text       : #403d39;
+  --color-border          : #CCC5B9;
+
+}
+
+button:active {
+  background-color: var(--color-light-background);
+  box-shadow      : var(--color-dark-text) 0 3px;
+  transform       : translateY(4px);
+}
+
+button {
+  margin-right    : 0.25em;
+  display         : inline-block;
+  padding         : 0.25em 0.25em;
+  font-size       : 1em;
+  cursor          : pointer;
+  text-align      : center;
+  text-decoration : none;
+  outline         : none;
+  color           : var(--color-dark-text);
+  background-color: var(--color-light-text);
+  border          : var(--color-border);
+  border-radius   : 8px;
+  box-shadow      : var(--color-dark-text) 0 2px;
+}
+
+html {
+  background-color: var(--color-dark-background);
+}
+
+/* frontend : not using link for the moment */
+aside a {
+  pointer-events: none;
+}
+
+.formContainer {
+  display        : flex;
+  justify-content: space-evenly;
+  align-content  : flex-start;
+  align-items    : flex-start;
+  flex-flow      : column wrap;
+}
+
+/* FLEXBOX */
+
+.wrapper {
+  display       : flex;
+  flex-direction: column;
+  min-height    : 100vh;
+}
+
+.container {
+  /* most containers */
+  display        : flex;
+  justify-content: space-evenly;
+  align-content  : flex-start;
+  align-items    : flex-start;
+  flex-flow      : row wrap;
+}
+
+.containerAsideMain {
+  display        : flex;
+  justify-content: space-evenly;
+  align-content  : flex-start;
+  align-items    : flex-start;
+  flex-flow      : row wrap;
+  flex-grow      : 2;
+}
+
+
+/* BODY */
+body {
+  padding: 0;
+}
+
+/* FOOTER */
+footer {
+  font-family     : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  color           : var(--color-dark-text);
+  background-color: var(--color-light-text);
+  display         : flex;
+  align-content   : center;
+  align-items     : center;
+  justify-content : center;
+  flex-flow       : column nowrap;
+}
+
+/* HEADER */
+header {
+  padding        : 0;
+  display        : flex;
+  align-content  : center;
+  align-items    : center;
+  justify-content: flex-start;
+  flex-wrap      : nowrap;
+}
+
+header .item {
+  align-self: center;
+  margin    : 1em;
+}
+
+header .emptySpace {
+  flex-grow: 4;
+}
+
+header a {
+  font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  text-decoration: none;
+  color          : var(--color-light-text);
+}
+
+header a img {
+  /* icon in header */
+  max-width : 100px;
+  max-height: 100px;
+  margin    : 0;
+}
+
+header a:hover {
+  text-decoration: underline;
+  color          : var(--color-highlight);
+}
+
+#home {
+  /* title */
+  font-family    : "Original Surfer", cursive, "Helvetica", "Arial", "Courier";
+  font-size      : 2em;
+  color          : var(--color-light-text);
+  text-decoration: none;
+  margin         : 1em 1em 1em 0;
+}
+
+#home:hover {
+  color: var(--color-highlight);
+}
+
+/* NAV */
+nav {
+  margin         : 1em;
+  padding        : 1em;
+  border-radius  : 8px;
+  color          : var(--color-dark-text);
+  background     : var(--color-light-text);
+  font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  display        : flex;
+  align-content  : center;
+  align-items    : center;
+  justify-content: flex-start;
+  flex-flow      : column wrap;
+}
+
+nav button {
+  color           : var(--color-dark-text);
+  background-color: var(--color-light-text);
+  border          : solid var(--color-border) 1px;
+  border-radius   : 8px;
+  box-shadow      : var(--color-dark-text) 0 2px;
+}
+
+nav .container {
+  flex-flow      : column wrap;
+  align-self     : flex-start;
+  align-items    : center;
+  justify-content: flex-start;
+  min-width      : 100%;
+}
+
+nav .navbarSearchCategories {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : nowrap;
+  flex-grow     : 1;
+  min-width     : 100%;
+}
+
+nav .navbarSearchCategories button {
+  flex-grow      : 1;
+  display        : flex;
+  flex-flow      : row nowrap;
+  align-items    : center;
+  justify-content: center;
+  align-self     : center;
+  padding        : 0.25em;
+  min-height     : 3em;
+  min-width      : 3em;
+  border-radius  : 8px;
+  margin         : 0.25em;
+  font-family    : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+}
+
+nav .searchButton:hover {
+  color          : var(--color-highlight);
+  text-decoration: underline;
+}
+
+nav .navbarSearch {
+  min-width  : 100%;
+  display    : flex;
+  flex-flow  : nowrap row;
+  align-items: center;
+}
+
+nav .navbarSearch form {
+  flex-grow      : 1;
+  align-content  : center;
+  align-items    : center;
+  justify-content: flex-start;
+  flex-flow      : nowrap row;
+}
+
+nav .navbarSearch form input,
+nav .navbarSearch form button {
+  min-height   : 2em;
+  border-radius: 8px;
+  margin       : 0.25em;
+  font-family  : "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+  align-self   : center;
+}
+
+nav .navbarSearch form input {
+  flex-grow       : 1;
+  background-color: #fffcf2;
+}
+
+#btnSubmit {
+  display: inline-flex;
+}
+
+
+#rangeApi {
+  display: none;
+}
+
+#searchKeyForm {
+  display: flex;
+}
+
+#searchRangeForm {
+  display: none;
+}
+
+#search2RangeForm {
+  display: none;
+}
+
+#searchTypeForm {
+  display: none;
+}
+
+#searchNumber {
+  display: none;
+}
+
+/* 
+nav .container form button {}
+*/
+
+/* MAIN */
+main {
+  margin         : 1em;
+  border-radius  : 8px;
+  color          : var(--color-dark-text);
+  height         : 80%;
+  flex-grow      : 1;
+  padding        : 1em;
+  display        : flex;
+  flex-flow      : row wrap;
+  justify-content: space-evenly;
+  align-content  : space-evenly;
+  align-items    : stretch;
+}
+
+main .activity {
+  flex-basis   : 10em;
+  border       : var(--color-dark-background) 3px solid;
+  border-radius: 8px;
+  padding      : 1em;
+  margin       : 0.5em;
+  background   : var(--color-light-text);
+}
+
+main .activity h1 {
+  font-weight: bold;
+  font-size  : 1em;
+}
+
+/* ASIDE */
+.containerAsideMain aside {
+  display         : none;
+  font-family     : "Roboto Mono", monospace;
+  background-color: var(--color-light-text);
+  border-radius   : 8px;
+  margin          : 1em;
+  flex-flow       : column nowrap;
+  justify-content : space-evenly;
+  align-content   : center;
+  align-items     : center;
+}
+
+.containerAsideMain aside h1 {
+  font-style: italic;
+}
+
+.containerAsideMain aside .item {
+  margin: 0.5em;
+}
+
+/* LINKS */
+a {
+  text-decoration: underline;
+  color          : var(--color-light-background);
+  font-family    : "Roboto Mono", monospace;
+}
+
+/* CLASSES */
+.activity {
+  font-family: "Noto Sans JP", sans-serif, "Helvetica", "Arial", "Courier";
+}
+
+.activity h1 {
+  font-weight: bold;
+}
+
+.slider,
+.range {
+  /* snippet from https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+  -webkit-appearance: none;
+  appearance        : none;
+  width             : 100%;
+  height            : 25px;
+  background        : var(--color-light-background);
+  opacity           : 0.7;
+  -webkit-transition: 0.2s;
+  transition        : opacity 0.2s;
+  border            : var(--color-dark-background) solid 1px;
+}
+
+.slider::-webkit-slider-thumb,
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance        : none;
+  width             : 25px;
+  height            : 25px;
+  border-radius     : 50%;
+  border            : var(--color-dark-text) 1px solid;
+  background        : var(--color-light-text);
+  cursor            : pointer;
+}
+
+select {
+  margin-right    : 0.25em;
+  display         : inline-block;
+  padding         : 0.25em 0.25em;
+  font-size       : 1em;
+  cursor          : pointer;
+  text-align      : center;
+  text-decoration : none;
+  outline         : none;
+  color           : var(--color-dark-text);
+  background-color: var(--color-light-text);
+  border          : var(--color-border);
+  border-radius   : 8px;
+  box-shadow      : var(--color-dark-text) 0 2px;
+}
+
+
+/* ********************************************************************************** */
+/* Extra large screens, TV */
+@media screen and (min-width: 1201px) {}
+
+/* INTERMEDIATE */
+@media screen and (max-width: 900px) {
+  /* ! HEADER ! */
+
+  /* ! NAV ! */
+  .btnText {
+    display: none;
+  }
+
+  /* ! MAIN ! */
+
+  /* ! FOOTER ! */
+
+  /* ! MISC ! */
+
+}
+
+/* TABLETS */
+@media screen and (max-width: 768px) {
+  /* ! HEADER ! */
+
+  /* ! NAV ! */
+  nav .navbarSearchCategories {
+    flex-wrap: wrap;
+  }
+
+  .btnSubmit .btnText {
+    display: none;
+  }
+
+  .btnText {
+    display: none;
+  }
+
+  .material-icons {
+    align-self: center;
+  }
+
+  /* ! MAIN ! */
+
+  /* ! FOOTER ! */
+
+  /* ! MISC ! */
+
+}
+
+/* MOBILE PHONE */
+@media screen and (max-width: 480px) {
+
+  /* ! GENERAL ! */
+  .item {
+    flex-grow: 4;
+  }
+
+  /* ! HEADER ! */
+  header {
+    margin : 0;
+    padding: 0;
+  }
+
+  header>* {
+    margin: 0;
+  }
+
+  header .item {
+    flex-grow: 1;
+    margin   : 0;
+  }
+
+  header a {
+    /* title */
+    font-size: 1em;
+  }
+
+  header .emptySpace {
+    display: none;
+  }
+
+  #menuButtonHeader {
+    color           : var(--color-dark-background);
+    background-color: var(--color-light-text);
+    border-radius   : 8px;
+  }
+
+  #home {
+    display: none;
+  }
+
+  /* ! NAV ! */
+  nav .navbarSearchCategories {
+    flex-wrap: wrap;
+  }
+
+  input[type="text"],
+  select {
+    /* to reduce input text bar */
+    width     : 100%;
+    box-sizing: border-box;
+  }
+
+  /* ! MAIN ! */
+  main {
+    padding: 0.25em;
+    margin : 0.25em;
+  }
+
+  aside {
+    display: none;
+  }
+
+  /* ! FOOTER ! */
+
+  /* ! CLASSES ! */
+  .btnText {
+    display: none;
+  }
+}
